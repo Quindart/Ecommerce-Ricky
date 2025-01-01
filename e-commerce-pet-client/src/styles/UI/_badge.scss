@@ -1,0 +1,68 @@
+.badge__list {
+    @include position(absolute, 15px, 68px, null, 15px);
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -3px;
+
+
+    .badge {
+        flex: 0 1 auto;
+        text-transform: uppercase;
+        display: inline-block;
+        text-align: center;
+        margin: 3px;
+        border-radius: 13px;
+        padding: 3px 10px;
+        letter-spacing: 0.045em;
+
+        &__featured {
+            background-color: $blue-main;
+            order: 1;
+
+        }
+
+        &__new {
+            background-color:  #73BE2F;
+            order: 2;
+        }
+
+        &__sale {
+            background-color: #F73E04;
+            order: 3;
+        }
+
+        &__outofstock {
+            background-color: #7a99c1;
+            order: 4;
+        }
+    }
+
+}
+
+
+@include respond (tablet) {
+
+    .badge {
+        @include text(1.2rem, 600, $white, 1.5rem);
+
+    }
+
+}
+
+@include respond(large-mobile) {
+    .badge {
+        @include text(0.9rem, 600, $white, 1.5rem);
+
+    }
+}
+
+@include respond (desktop) {
+
+    .badge {
+        @include text(1.2rem, 600, $white, 1.5rem);
+
+    }
+
+}

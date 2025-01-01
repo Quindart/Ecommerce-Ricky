@@ -1,0 +1,66 @@
+.input__quantity {
+
+    .no-spin-button {
+        -moz-appearance: textfield;
+    }
+
+    .no-spin-button::-webkit-inner-spin-button,
+    .no-spin-button::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    color: $blue-main;
+    flex: 0 0 auto;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    border-radius: 25px;
+    border: solid 1px $border-color-light;
+    overflow: hidden;
+
+    label {
+        @include position(absolute, -10000em, null, null, null);
+        @include box(1px, 1px);
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    input {
+        width: 50px;
+        order: 2;
+        @include text(1.6rem, 600, currentColor, 1);
+        letter-spacing: 0.015em;
+        text-align: center;
+        background: unset;
+        border: 0;
+        padding: 0;
+        outline: none;
+    }
+
+    button {
+        cursor: pointer;
+        @include text(1.2rem, null, currentColor, 1);
+        width: 32px;
+    }
+
+    .minus {
+        order: 1;
+        justify-content: flex-end;
+    }
+
+    .plus {
+        order: 3;
+        justify-content: flex-start;
+    }
+
+    &--large {
+        height: 50px;
+    }
+
+    &--medium {
+        height: 36px;
+    }
+}

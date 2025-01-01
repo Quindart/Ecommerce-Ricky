@@ -1,0 +1,33 @@
+.scrollToTop {
+    background-color: $white;
+    color: $blue-main;
+    border: $white 0.2rem solid;
+    @include box(5.4rem, 5.4rem);
+    cursor: pointer;
+    //   padding: calc($spacing * 2.5);
+    align-items: center;
+    @include position(fixed, null, 4rem, 4.5rem, null);
+    box-shadow: 0 1px 10px rgba(12, 44, 92, 0.07);
+    z-index: 10;
+    border-radius: 50%;
+    opacity: 1;
+    transition: $btn-hover-transition;
+
+    svg {
+        color: $blue-main;
+        @include box(2.4rem, 2.4rem);
+    }
+
+    &:hover {
+        background-color: $blue-main;
+    }
+
+    &:hover>svg {
+        color: $white;
+    }
+
+    &.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,586 @@
+.section-cart {
+    background-color: #f0f9fc;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+
+    @include respond(tablet) {
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+    }
+
+    @include respond(large-mobile) {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    &__wrap {
+        background-color: #fff;
+        display: flex;
+        border-radius: 4px;
+        border: 1px solid #dceaf6;
+        height: 500px;
+
+        @include respond(desktop) {
+            width: 1160px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include respond(tablet) {
+            margin-left: 30px;
+            margin-right: 30px;
+            width: calc(100% - 60px);
+        }
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            height: auto;
+        }
+
+        @media (max-width: 619px) {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
+    &__col-1 {
+        flex: 1;
+        padding: 3.5rem 4rem;
+        overflow-y: scroll;
+        scrollbar-width: none;
+
+        @media (max-width: 1023px) {
+            @include px(30px);
+        }
+
+        @media (max-width: 767px) {
+            max-width: 400px;
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__col-2 {
+        position: relative;
+        margin: 20px;
+        margin-left: 0px;
+        width: 400px;
+        max-width: 100%;
+
+        @media (max-width: 1023px) and (min-width: 768px) {
+            width: 339px;
+        }
+
+        @media (max-width: 767px) {
+            margin: 0;
+        }
+    }
+
+    &__total {
+        @media (max-width: 767px) {
+            overflow: hidden;
+        }
+    }
+
+    &__collateral {
+        position: relative;
+        border: solid 1px $blue-main;
+        border-radius: 4px;
+        padding: 25px 35px 30px 35px;
+
+        @media (max-width: 1023px) {
+            @include padding(2rem, 2.5rem, 2.5rem, 2.5rem);
+        }
+
+        @media (max-width: 767px) {
+            padding: 20px 15px;
+            overflow: hidden;
+        }
+
+        &-title {
+            font-size: 2.2rem;
+            font-weight: 500;
+            color: $blue-main;
+            line-height: 1.27;
+        }
+
+        &-price {
+            font-family: $font-quicksan;
+            position: relative;
+            letter-spacing: -0.01em;
+            white-space: nowrap;
+            @include text(1.7rem, 700, #f63e04, 2.1rem);
+
+            &-total {
+                letter-spacing: -0.02em;
+                @include text(2.4rem, _, _, 3rem);
+            }
+        }
+
+        &-hr {
+            padding: 2rem 0;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                border-top: solid 1px #dceaf6;
+            }
+        }
+    }
+
+    &__coupon {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-bottom: solid 1px #dceaf6;
+        }
+
+        &-wrap {
+            display: flex;
+            column-gap: 1rem;
+            padding-top: 2.5rem;
+            align-items: center;
+        }
+    }
+
+    &__shipping-methods {
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        &-label {
+            display: inline-block;
+            font-size: 1.4rem;
+        }
+    }
+
+    &__detail {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+
+        th {
+            text-align: left;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 18px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #7f8d9d;
+
+            &:last-child {
+                text-align: right;
+            }
+        }
+
+        &-quantity {
+            text-align: center !important;
+            padding-right: 25px;
+        }
+
+        @media (max-width: 1023px) {
+            thead {
+                display: block;
+                margin-bottom: 2rem;
+
+                >tr {
+                    display: flex;
+                }
+            }
+
+            &-name {
+                flex: 1;
+            }
+
+            &-quantity {
+                display: none;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+        border-bottom: solid 1px #dceaf6;
+
+        td {
+            padding: 20px;
+            padding-left: 0;
+            border-bottom: solid 1px #dceaf6;
+        }
+
+        &-thumbnail {
+            padding-right: 1rem !important;
+            position: relative;
+
+            a {
+                display: inline-block;
+                // margin-left: -15px;
+            }
+
+            img {
+                max-width: unset;
+                height: 70px !important;
+                object-fit: contain;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        &-name {
+            width: 75%;
+            font-family: $font-quicksan;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.005em;
+            color: $blue-main;
+            // padding-left: 20px !important;
+        }
+
+        &-title {
+            color: $blue-main;
+
+            &:hover {
+                color: $green-1-hover-text;
+            }
+        }
+
+        &-brand {
+            margin: 10px 0 0 0;
+            padding: 0;
+            font-family: $font-outfit;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            letter-spacing: 0.005em;
+            color: #7f8d9d;
+        }
+
+        &-price {
+            display: inline-block;
+            margin-top: 10px;
+            font-family: $font-outfit;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            letter-spacing: 0.02em;
+            color: #7f8d9d;
+        }
+
+        &-subtotal {
+            font-family: $font-quicksan;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 21px;
+            letter-spacing: -0.01em;
+            color: #00234b;
+            padding-right: 0 !important;
+            text-align: right;
+        }
+
+        @media (max-width: 1023px) {
+            position: relative;
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            padding-left: 90px;
+            align-items: center;
+            padding-bottom: 20px;
+            margin-bottom: 15px;
+            border-bottom: solid 1px #dceaf6;
+
+            >* {
+                display: block;
+                width: 100%;
+            }
+
+            td {
+                padding: 0 !important;
+                border-bottom: none;
+            }
+
+            &-thumbnail {
+                position: absolute;
+                left: -4px;
+                top: 0;
+                height: 100%;
+                width: 70px !important;
+            }
+
+            &-name {
+                margin-bottom: 2.2rem;
+                // margin-left: 20px !important;
+            }
+
+            &-quantity {
+                flex: 0 0 auto !important;
+                width: unset !important;
+                text-align: left;
+                min-height: 36px;
+                line-height: 36px;
+            }
+
+            &-subtotal {
+                width: unset !important;
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 359px) {
+            &-quantity {
+                .minus {
+                    width: 20px;
+                }
+
+                .plus {
+                    width: 20px;
+                }
+            }
+        }
+
+        &-btnClose {
+            position: absolute;
+            z-index: 1;
+            left: -36%;
+            top: 30%;
+            font-weight: 700;
+
+            @media (max-width: 1023px) {
+                top: unset;
+                right: unset;
+                bottom: 19px;
+                left: 25%;
+            }
+
+            svg {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+        }
+
+        .btn:disabled {
+            cursor: not-allowed;
+        }
+    }
+}
+
+//Animation
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+@mixin appearance($str) {
+    appearance: $str;
+    -webkit-appearance: $str;
+    -moz-appearance: $str;
+}
+
+//Base
+@mixin flex($justify-content: normal,
+    $align-items: normal,
+    $direction: row,
+    $gap: 0) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin text($font-size,
+    $font-weight,
+    $color: $text-primary,
+    $line-height: 1.5) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+    line-height: $line-height;
+}
+
+@mixin grid($template-columns, $template-rows, $gap: 0) {
+    display: grid;
+    grid-template-columns: $template-columns;
+    grid-template-rows: $template-rows;
+    grid-gap: $gap;
+}
+
+@mixin image($object-fit, $width, $height) {
+    object-fit: $object-fit;
+    width: $width;
+    height: $height;
+}
+
+@mixin bg-image($url, $width, $height, $size) {
+    width: $width;
+    height: $height;
+    background-image: url($url);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $size;
+}
+
+@mixin box($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin position($position, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin btn-size($x, $y) {
+    padding: $x $y;
+}
+
+@mixin px($x) {
+    padding-right: $x;
+    padding-left: $x;
+}
+
+@mixin py($y) {
+    padding-top: $y;
+    padding-bottom: $y;
+}
+
+@mixin padding($y1, $x1, $y2, $x2) {
+    padding-top: $y1;
+    padding-right: $x1;
+    padding-bottom: $y2;
+    padding-left: $x2;
+}
+
+@mixin color-scheme($text-color,
+    $placeholder-color,
+    $border-color,
+    $background-color,
+    $outline-color) {
+    color: $text-color;
+
+    &::placeholder {
+        color: $placeholder-color;
+    }
+
+    border: solid 1px $border-color;
+    background-color: $background-color;
+
+    &:focus {
+        outline: none;
+        border-color: $outline-color !important;
+    }
+}
+
+@mixin color-checked($content-color) {
+    &:checked::after {
+        content: $content-color;
+    }
+}
+
+@mixin color-header($text-color, $background-color, $hover-color, $icon-color) {
+    color: $text-color;
+    background-color: $background-color;
+
+    a:hover {
+        color: $hover-color !important;
+    }
+
+    svg {
+        color: $icon-color !important;
+    }
+}
+
+@mixin button-active() {
+    transition: translate 0s;
+    transform: translateY(2px);
+}
+
+// MEDIA QUERY MANAGER
+/* 
+  600px and down for mobile devices
+  600px - 768px: large-mobil / portrait tablets
+  768px - 1024px:  tab / landscape tablets
+  1024px -1200: laptop / medium desktop
+  >1200px:  large desktop / large laptop
+  
+  
+  
+  keyword for breakpoint: 
+  
+  large-mobile,
+  tablet
+  desktop, 
+  large-desktop
+  */
+
+// @mixin respond($breakpoint) {
+//     @if $breakpoint ==mobile {
+//         @media only screen and (max-width: 767px) {
+//             @content;
+//         }
+//     }
+
+//     @if $breakpoint ==tablet {
+//         @media only screen and (max-width: 1189px) {
+//             @content;
+//         }
+//     }
+
+//     @if $breakpoint ==desktop {
+//         @media only screen and (min-width: 1190px) {
+//             @content;
+//         }
+//     }
+
+//     @if $breakpoint ==large-desktop {
+//         @media only screen and (min-width: 1200px) {
+//             @content;
+//         }
+//     }
+// }

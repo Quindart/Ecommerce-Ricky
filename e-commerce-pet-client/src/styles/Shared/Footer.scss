@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+
+.footer__top {
+    background-color: #E4F5FC;
+    min-height: 9rem;
+    @include flex(null, center, null, null);
+
+    &-container {
+        @include respond(desktop) {
+            max-width: 116rem;
+            margin: 0 auto;
+        }
+
+        @include respond(tablet) {
+            margin: 0 3rem;
+            width: calc(100% - 6rem);
+        }
+    }
+
+    &-wrapper {
+        @include flex(center, center, null, null);
+        flex-wrap: wrap;
+        width: 100%;
+        align-content: flex-start;
+
+        @include respond(mobile) {
+            justify-content: start;
+            padding: 2rem 0;
+        }
+    }
+
+    &-list {
+        @media (min-width: 768px) {
+            @include flex(center, center, null, null);
+            margin: -2.5rem;
+            width: 100%;
+        }
+
+        @include respond(tablet) {
+            justify-content: space-around;
+        }
+
+        @include respond(mobile) {
+            @include flex(center, center, column, null);
+            margin: -1.5rem 0;
+            width: 100%;
+        }
+    }
+
+    &-item {
+        @include flex(null, center, null, 1.5rem);
+
+        @media (min-width: 768px) {
+            flex: 1 auto;
+            max-width: 100%;
+            margin: 2.5rem 0;
+            padding: 0 2.5rem;
+        }
+
+        @include respond(desktop) {
+            width: 37rem;
+        }
+
+        @include respond(tablet) {
+            margin: 1rem 0;
+            width: 22.6rem;
+        }
+
+        @include respond(mobile) {
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+
+        svg {
+            @include box(3rem, 3rem);
+            fill: $green-1;
+        }
+    }
+
+    &-title {
+        @include text(2.1rem, 700, $blue-main, 1.19);
+        font-family: $font-quicksan;
+
+        @include respond(mobile) {
+            font-size: 1.8rem;
+        }
+    }
+}
+
+
+.footer {
+    background-image: url('/assets/images/ricky-9.png');
+    position: relative;
+
+    .container {
+        flex-wrap: wrap;
+        padding: 6rem 0;
+        max-width: calc(100% - 12rem);
+
+        @include respond(large-mobile) {
+            max-width: calc(100% - 2rem);
+        }
+
+        @include respond(tablet) {
+            max-width: calc(100% - 5rem);
+        }
+
+        margin: 0 auto;
+
+        a:hover {
+            color: #cc563d;
+            transition: ease 0.3s;
+        }
+
+        //@include centered();
+        @include flex(space-around, start, row, 3rem);
+
+        @include respond(tablet) {
+            @include flex(space-evenly, start, row, 1.5rem);
+        }
+
+        @include respond(large-mobile) {
+            padding: 1.5rem;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        &__item {
+            &--item1 {
+                @include respond(large-mobile) {
+                    @include flex(center, center, column);
+
+                    div {
+                        @include flex(center, center, column);
+
+                        a:not(:first-child) {
+                            margin: 1.5rem 0 0 0;
+                        }
+                    }
+                }
+
+                width: calc(20% - 3rem);
+
+                div {
+                    align-items: center;
+                    color: #ffffff;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    letter-spacing: 0.5px;
+                    line-height: 18px;
+
+                    .terms,
+                    .sitemap {
+                        margin-left: 1.3rem;
+
+                        &::before {
+                            content: '·';
+                            padding-right: 2rem;
+
+                            @include respond(large-mobile) {
+                                content: '';
+                                padding-right: 0rem;
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    margin: 3rem 0;
+                    @include text(1.4rem, 400, #587fb9, 1.5rem);
+
+                    @include respond(tablet) {
+                        margin: 2rem 0 2rem 0;
+                    }
+                }
+
+                a {
+                    margin-right: 0.5rem;
+
+                    &:hover {
+                        color: red;
+                    }
+
+                    @include text(1.2rem, 400, #fff, 1.5rem);
+
+                    @include respond(large-mobile) {
+                        margin-right: 0rem;
+                    }
+                }
+            }
+
+            &--item2 {
+                width: calc(27% - 3rem);
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+
+                @include respond(large-mobile) {
+                    margin-top: 1rem;
+                }
+
+                .item2__content {
+                    display: flex;
+
+                    span {
+                        @include text(1.4rem, 400, #96b2db, 1.8rem);
+                    }
+
+                    .image {
+                        @include respond(large-mobile) {
+                            margin-right: 0;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        margin-right: 1.5rem;
+                        @include box(3.4rem, 3.4rem);
+                        display: block;
+
+                        img {
+                            object-fit: fill;
+                        }
+                    }
+
+                    @include respond(large-mobile) {
+                        flex-direction: column;
+                        align-items: center;
+
+                        span {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            &--item3 {
+                @include respond(tablet) {
+                    margin-top: 1.2rem;
+                }
+
+                width: calc(25% - 3rem);
+
+                ul {
+                    li {
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 2rem;
+
+                        img {
+                            margin-right: 1.7rem;
+                        }
+
+                        @include respond(large-mobile) {
+                            padding-left: 0.5rem;
+                        }
+
+                        a {
+                            @include text(1.4rem, 400, #fff, 1.8rem);
+                        }
+                    }
+                }
+
+                .social {
+                    margin-top: 2rem;
+                    display: flex;
+                    align-items: center;
+
+                    @include respond(large-mobile) {
+                        justify-content: center;
+                    }
+
+                    div {
+                        @include text(1.4rem, 400, #587fb9, 2rem);
+                        margin-right: 2rem;
+                        flex-wrap: nowrap;
+                    }
+
+                    a {
+                        @include text(1.2rem, 400, #fff, 2rem);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        @include box(3.6rem, 3.6rem);
+
+                        &:hover {
+                            color: #cc563d;
+                            transition: ease 0.3s;
+                        }
+
+                        .icon {
+                            @include box(1.8rem, 1.8rem);
+                        }
+                    }
+                }
+            }
+
+            &--item4 {
+                width: calc(28% - 3rem);
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 2rem;
+
+                    img {
+                        margin-right: 1.7rem;
+                    }
+
+                    span {
+                        @include text(1.3rem, 400, #fff, 2rem);
+                    }
+
+                    a {
+                        @include text(1.3rem, 400, #fff, 2rem);
+                    }
+                }
+
+                @include respond(tablet) {
+                    padding-top: 1rem;
+                }
+            }
+
+            @include respond(tablet) {
+                width: calc(50% - 3rem);
+                max-width: 60rem;
+                font-size: 2rem;
+            }
+
+            @include respond(large-mobile) {
+                width: calc(100% - 1rem);
+                max-width: 100vw;
+            }
+        }
+    }
+}

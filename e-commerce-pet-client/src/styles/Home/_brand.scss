@@ -1,0 +1,99 @@
+@include respond(mobile) {
+    .brand {
+        margin-top: 2.5rem;
+        margin-bottom: 3rem;
+
+        &__container {
+            margin: 0 2rem;
+            width: calc(100% - 4rem);
+        }
+
+        &__item {
+            margin-left: calc(15px / 2);
+            margin-right: calc(15px / 2);
+        }
+
+        .hide-on-mobile {
+            display: none;
+        }
+    }
+}
+
+@include respond(tablet) {
+    .brand {
+        margin-top: 3.5rem;
+        margin-bottom: 6rem;
+
+        &__container {
+            padding-top: 3rem;
+            margin: 0 3rem;
+            width: calc(100% - 6rem);
+        }
+
+        &__item {
+            margin-left: calc(7.5rem / 2);
+            margin-right: calc(7.5rem / 2);
+        }
+    }
+}
+
+@include respond(desktop) {
+    .brand {
+        margin-top: 3.5rem;
+        margin-bottom: 6rem;
+
+        &__container {
+            padding-top: 3rem;
+            max-width: 116rem;
+        }
+
+        &__wrapper {
+            justify-content: center;
+        }
+
+        &__item {
+            margin-left: calc(7.5rem / 2);
+            margin-right: calc(7.5rem / 2);
+        }
+    }
+}
+
+.brand {
+    position: relative;
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__list {
+        flex-wrap: wrap;
+        @include flex(center, null, null, null);
+    }
+
+    &__item {
+        img {
+            @include box(10rem, 10rem)
+        }
+    }
+
+    &__svg {
+        &--right {
+            @include position(absolute, 1.5rem, 0, null, null);
+            width: 20rem;
+
+            @include respond(tablet) {
+                display: none
+            }
+        }
+
+        &--left {
+            @include position(absolute, 10rem, null, null, 0);
+            width: 20rem;
+
+            @include respond(tablet) {
+                display: none
+            }
+        }
+    }
+}

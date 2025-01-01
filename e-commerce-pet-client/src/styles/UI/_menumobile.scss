@@ -1,0 +1,173 @@
+$colorHover: #F63E04;
+
+@include respond(desktop) {
+    .menuui {
+        display: none;
+    }
+}
+
+@include respond(tablet) {
+    .menuui {
+        height: 100%;
+        background-color: rgba(0, 37, 79, 0.953);
+        @include position(fixed, 0, null, null, null);
+        z-index: 9999;
+        overflow: hidden;
+        transition: 0.5s;
+        overflow-y: auto;
+
+        &_header {
+            @include box(100%, 60px);
+            @include flex(null, center, null, null);
+            padding: 0 20px;
+
+            &_close {
+                @include box(100%, 100%);
+                position: relative;
+                padding: 0 15px;
+                box-sizing: border-box;
+
+                &_text {
+                    cursor: pointer;
+                    @include position(absolute, 50%, null, null, 0);
+                    transform: translateY(-50%);
+
+                    &:active {
+                        margin-top: 4px;
+                    }
+
+                    svg {
+                        width: 17px;
+                    }
+
+                    @include flex(flex-start, center, null, null);
+                    @include text(1.5rem, 600, $white, null);
+
+                }
+
+                &_icon {
+                    cursor: pointer;
+                    @include position(absolute, 50%, 0%, null, null);
+                    transform: translateY(-50%);
+
+                    &:active {
+                        margin-top: 4px;
+                    }
+
+                    svg {
+                        padding: 0;
+                    }
+
+                    @include flex(flex-start, center, null, null);
+                    @include text(1.5rem, 600, $white, null);
+
+                }
+            }
+        }
+
+        .title_tag {
+            @include text(2.4rem, 600, $green-1, 1.23);
+            text-transform: uppercase;
+            padding: 15px 30px 15px 25px;
+        }
+
+        &_content {
+
+            display: flex;
+            transition: 0.5s;
+            height: 80%;
+
+            &_item {
+
+                overflow-y: scroll;
+
+                &_ul {
+                    &_lin {
+                        cursor: pointer;
+
+                        &_span {
+                            @include flex(space-between, center, null, null);
+                            width: 100%;
+                            padding: 15px 25px;
+                            box-sizing: border-box;
+                            color: $white;
+                            transition: 0.5s;
+
+                            svg {
+                                @include box(30px, 30px);
+                                color: #526581;
+                            }
+
+                            &_s {
+                                @include flex(null, center, null, null);
+                                @include text(1.7rem, 600, null, 1.23);
+                                letter-spacing: 0.07em;
+                                text-transform: uppercase;
+                            }
+                        }
+
+                        :hover {
+                            color: $colorHover;
+
+                            svg {
+                                color: $colorHover;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &_item-wrap {
+                flex-grow: 0;
+                transition: 0.5s;
+
+                &_ul {
+                    &_lin {
+                        cursor: pointer;
+
+                        &_span {
+                            @include flex(space-between, center, null, null);
+                            width: 100%;
+                            padding: 15px 25px;
+                            box-sizing: border-box;
+                            color: $white;
+                            transition: 0.5s;
+
+                            svg {
+                                @include box(30px, 30px);
+                                color: #526581;
+                            }
+
+                            &_s {
+                                @include flex(null, center, null, null);
+                                @include text(1.7rem, 600, null, 1.23);
+                                letter-spacing: 0.07em;
+                                text-transform: uppercase;
+                            }
+                        }
+
+                        :hover {
+                            color: $colorHover;
+
+                            svg {
+                                color: $colorHover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &_footer {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+@include respond(mobile) {
+    .menuui {
+        &_content {
+            height: 80%;
+        }
+    }
+}

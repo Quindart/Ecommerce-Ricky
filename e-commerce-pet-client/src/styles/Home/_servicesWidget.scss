@@ -1,0 +1,89 @@
+@include respond(desktop) {
+    .widget {
+        &__container {
+            max-width: 1160px;
+            margin: 0 auto;
+            display: flex;
+        }
+    }
+}
+
+@include respond(tablet) {
+    .widget {
+        &__container {
+            margin: 0 30px 0 30px;
+            width: calc(100% - 60px);
+        }
+    }
+}
+
+@include respond(mobile) {
+    .widget {
+        &__container {
+            margin: 0 20px 0 20px;
+            width: calc(100% - 40px);
+        }
+    }
+}
+
+.widget {
+    width: 100%;
+    margin: 55px 0 50px 0;
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    &__heading {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+
+        h2 {
+
+            @include text(2.8rem, 700, $blue-main, 3rem);
+            font-family: $font-quicksan;
+            letter-spacing: -0.6px;
+        }
+    }
+
+    &__item {
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 35px 35px 44px;
+        background-color: $white;
+        border: 1px solid $border-color-light;
+        border-radius: 8px;
+
+        &--img {
+            @include box(22px, 22px);
+            margin-bottom: 18px;
+        }
+
+        &--title {
+            a {
+
+                font-family: $font-quicksan;
+                @include text(2.2rem, 700, $blue-main, 1.27);
+                letter-spacing: -.01em;
+                cursor: pointer;
+            }
+        }
+
+        &--description {
+            @include text(1.7rem, 400, $text-color, 1.53);
+            letter-spacing: .015em;
+            margin-top: 20px
+        }
+
+        &--btn {
+            margin-top: 30px;
+        }
+    }
+
+
+
+}

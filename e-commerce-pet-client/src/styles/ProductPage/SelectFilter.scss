@@ -1,0 +1,74 @@
+.select-filter {
+    position: relative;
+    cursor: pointer;
+
+    select {
+        appearance: none;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    option {
+        padding-right: 10px;
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        z-index: 1;
+    }
+
+    &__title {
+        font-size: 13px;
+        color: #7F8D9D;
+    }
+
+    &__icon {
+        @include text(1.3rem, _, $blue-main, _);
+    }
+
+    &__list {
+        background-color: white;
+        box-shadow: 0 0 0 1px rgb(179,203,232);
+        margin-top: 4px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border-radius: 3px;
+        z-index: 2;
+        white-space: nowrap;
+        overflow: hidden;
+
+        @media (min-width: 1189px) {
+            left: -29%;
+        }
+    }
+
+    &__item {
+        cursor: pointer;
+        font-weight: 400;
+        line-height: 40px;
+        list-style: none;
+        min-height: 40px;
+        outline: none;
+        padding-left: 18px;
+        padding-right: 29px;
+        text-align: start;
+        transition: all 0.15s;
+        position: relative;
+        font-size: 13px;
+        color: #7F8D9D;
+
+        &--active {
+            background: $blue-main;
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: $blue-main;
+            color: #fff;
+        }
+    }
+}

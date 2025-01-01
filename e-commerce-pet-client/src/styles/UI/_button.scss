@@ -1,0 +1,137 @@
+.btn {
+    font-family: $font-outfit;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+
+    &--primary {
+        border-radius: 2.5rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: solid 0.2rem $blue-main;
+        background-color: $blue-main;
+        align-items: center;
+        @include text(1.3rem, bold, #fff, 1.6rem);
+        @include btn-size(1.5rem, 2.5rem);
+        display: inline-flex;
+
+        span {
+            display: inline-flex;
+            font-size: 1.6rem;
+            margin-right: 0.5rem;
+        }
+
+        &:hover{
+            background-color: $blue-main-hover !important;
+            border-color: $blue-main-hover;
+        }
+    }
+
+    &--green {
+        background-color: $green-1;
+        border-color: $green-1;
+
+        &:hover {
+            background-color: #fff !important;
+            border-color: #fff !important;
+            color: $green-1-hover-text;
+        }
+    }
+
+    &--white {
+        background-color: #fff;
+        border-color: #fff;
+        color: $blue-main !important;
+
+        &:hover {
+            background-color: $blue-main-hover !important;
+            border-color: $blue-main-hover !important;
+            color: #fff;
+        }
+    }
+
+    &--ghost {
+        border-color: $blue-main;
+        background-color: transparent;
+        color: $blue-main;
+
+        &:hover {
+            background-color: $blue-main !important;
+            color: #fff;
+            border-color: $blue-main !important;
+        }
+    }
+
+    &--icon  {
+        @include flex(center, center);
+        @include text(2rem, null, $blue-main, null);
+        @include box(4rem, 4rem);
+        border-radius: 50%;
+        background-color: #fff;
+        border: solid 0.2rem $blue-main;
+
+        &.btn--unbordered {
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+
+            &:hover {
+                background-color: transparent !important;
+                color: $blue-main !important;
+            }
+        }
+
+        &:hover {
+            transition: $btn-hover-transition;
+        }
+    }
+
+    &--small {
+        @include btn-size(0.5rem, 1.8rem);
+        font-size: 1.2rem;
+    }
+
+    &--medium {
+        @include btn-size(0.8rem, 3rem);
+        font-size: 1.2rem;
+    }
+
+    &__add-to-cart {
+        font-size: 11px;
+        width: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        &--text {
+            font-size: 1.2rem !important;
+
+            @media (max-width: 440px) {
+                display: none !important;
+            }
+        }
+    }
+
+    &:hover {
+        background-color: $blue-main;
+        color: #fff !important;
+    }
+
+    &.disabled {
+        opacity: 0.2;
+        cursor: unset;
+        pointer-events: none;
+    }
+
+    &:not(.disabled) {
+        transition: opacity 0.2s ease-in, visibility 0.2s ease-in, color 0.15s ease-in, border-color 0.15s ease-in, background-color 0.15s ease-in, box-shadow 0.15s ease-in;
+    }
+}
+
+.btn.btn--primary.btn--green:hover {
+    background-color: #fff !important;
+    border-color: #fff !important;
+    color: $green-1-hover-text !important;
+}

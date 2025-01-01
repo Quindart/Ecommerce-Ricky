@@ -1,0 +1,20 @@
+.loading {
+    @include flex(center, center, null, null);
+    @include position(fixed, 0, null, null, 0);
+    @include box(100%, 100%);
+    z-index: 100;
+
+    &__container {
+        @include position(fixed, 0, null, null, 0);
+        @include box(100%, 100%);
+        background: rgb(255, 255, 255);
+        z-index: 1;
+    }
+
+    &__img {
+        @include box(150px, 150px);
+        z-index: 2;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+}

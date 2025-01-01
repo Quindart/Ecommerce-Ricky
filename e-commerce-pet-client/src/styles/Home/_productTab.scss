@@ -1,0 +1,202 @@
+#product__tabs {
+    margin: 20px 0 30px 0;
+}
+
+.productTabs {
+    &__container {
+        max-width: 1160px;
+        display: flex;
+    }
+
+    &__wrapper {
+        width: 100%;
+
+        &--tabs {
+            @include flex(center, center, null, null);
+            margin-bottom: 25px;
+        }
+    }
+
+    &__list {
+        &--item {
+            display: flex;
+
+            &-wide {
+                border: 1px solid $border-color-light;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                background-color: $white;
+                display: flex;
+
+
+                &-header {
+                    background-color: #D1F1F3;
+                    min-height: 488px;
+                    color: $blue-main;
+
+                    position: relative;
+
+                    img {
+                        @include position(absolute, 0, null, null, 0);
+                        object-position: center bottom;
+                        z-index: 1;
+                    }
+                }
+
+                &-title {
+                    position: relative;
+                    z-index: 10;
+                    font-family: $font-quicksan;
+                    @include text(4.8rem, 700, $blue-main, 1.15);
+                    letter-spacing: -.02rem;
+                    text-transform: capitalize;
+
+                }
+
+                &-view {
+                    position: relative;
+                    z-index: 10;
+                    margin-top: 15px;
+
+                    a {
+                        @include flex(null, center, null, 8px);
+                        @include text(1.2rem, 700, $blue-main, 1.5rem);
+                        text-transform: uppercase;
+                        letter-spacing: .03em;
+                        padding: 10px 0;
+                    }
+                }
+
+                &-subcate {
+
+                    ul {
+                        column-count: 2;
+                        -moz-column-gap: 20px;
+                        column-gap: 20px;
+
+                        li {
+
+                            padding: 10px 0;
+
+                            a {
+                                @include text(1.4rem, 400, $blue-main, 1.28);
+                                letter-spacing: .025em;
+                                text-transform: capitalize;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-columns {
+                border: 1px solid $border-color-light;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+    }
+}
+
+@include respond(desktop) {
+
+    .productTabs {
+        &__list {
+            &--item {
+                &-wide {
+                    width: 463px;
+                    flex-direction: column;
+
+                    &-header {
+                        padding: 40px;
+                        min-height: 488px;
+
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+
+                    &-subcate {
+                        padding: 30px 40px;
+                    }
+                }
+
+                &-columns {
+                    width: calc(100% - 463px);
+
+                }
+            }
+        }
+    }
+}
+
+@include respond(tablet) {
+    .productTabs {
+        margin: 0 30px;
+
+        &__list {
+            &--item {
+                flex-wrap: wrap;
+
+                &-wide {
+                    width: 100%;
+
+                    &-header {
+                        min-height: 388px;
+                        padding: 35px 25px;
+                        flex: 0 0 50%;
+
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+
+                    &-subcate {
+                        padding: 25px 35px;
+                        flex: 0 0 50%;
+
+                    }
+                }
+
+                &-columns {
+                    width: 100%;
+
+                }
+            }
+        }
+    }
+}
+
+@include respond(mobile) {
+    .productTabs {
+        margin: 0;
+
+        &__list {
+            &--item {
+                flex-wrap: wrap;
+
+                &-wide {
+                    width: 100%;
+                    flex-direction: column;
+
+                    &-header {
+                        min-height: 375px;
+                        padding: 35px 20px;
+
+                        img {
+                            object-fit: contain;
+                        }
+                    }
+
+                    &-subcate {
+                        padding: 20px;
+                    }
+                }
+
+                &-columns {
+                    width: 100%;
+
+                }
+            }
+        }
+    }
+}

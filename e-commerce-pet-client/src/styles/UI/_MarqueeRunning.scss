@@ -1,0 +1,22 @@
+.running {
+    background: #fff;
+    padding: 25px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__text {
+        background: #fff;
+        padding-right: 4rem;
+        .text {
+            background: #fff;
+            color: #0052b1;
+            font-size: 2rem;
+            user-select: none;
+        }
+        .icon {
+            background: #fff;
+            padding-right: 1rem;
+            font-size: 2rem;
+        }
+    }
+}

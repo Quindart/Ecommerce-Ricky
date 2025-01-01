@@ -1,0 +1,28 @@
+.progress {
+    height: 8px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: $blue-main;
+        opacity: 0.06;
+    }
+
+    &__inner {
+        flex: 0 0 auto;
+        height: 100%;
+        border-radius: 4px;
+        background-color: #73BE2F;
+        width: 30%;
+    }
+}

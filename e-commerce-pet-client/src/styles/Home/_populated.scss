@@ -1,0 +1,187 @@
+.populated {
+
+    background-position: center center;
+    background-size: cover;
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    border-color: #DCEAF6;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+
+
+    &__container {
+        max-width: 1160px;
+        display: flex;
+
+        &--wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            &-content {
+                @include flex(null, center, null, null);
+                min-height: 640px;
+                width: 100%;
+
+                &-item {
+
+                    &:first-child {
+                        position: relative;
+
+                        img {
+                            vertical-align: middle;
+                            display: inline-block;
+                        }
+                    }
+
+                    .populated__title {
+                        h2 {
+                            @include text(3rem, 700, $blue-main, 3.4rem);
+                            letter-spacing: -0.025em;
+                        }
+                    }
+
+                    .populated__description {
+                        @include flex(null, null, null, 10px);
+
+                        p {
+                            text-align: left;
+                            font-family: $font-outfit;
+                            @include text(1.7rem, null, $text-color, 2.6rem);
+                            letter-spacing: 0.015em;
+                        }
+
+                        .populated__icon {
+                            @include box(35px, 35px);
+                            margin: 5px 20px 0 0;
+
+                            img {
+                                @include box(35px, 35px);
+
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@include respond(desktop) {
+    .populated {
+        margin: 50px 0 35px 0;
+        background-image: url('../../assets/images/populated_background.jpg');
+        position: relative;
+
+        &__container {
+            &--wrapper {
+                &-content {
+                    &-item {
+                        .populated__title {
+                            margin: 35px 0px 40px 0px;
+                        }
+
+                        flex: 0 0 50%;
+
+                        &:first-child {
+                            padding-right: 40px;
+
+                        }
+                    }
+                }
+
+                .populated__images {
+                    &--left {
+                        @include position(absolute, 751px, null, null, 1%);
+                        width: 140px;
+                    }
+
+                    &--right {
+                        @include position(absolute, 751px, 1%, null, null);
+                        width: 150px;
+
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+@include respond(tablet) {
+    .populated {
+        margin: 50px 0 35px 0;
+        background-image: url('../../assets/images/populated_background.jpg');
+
+        &__container {
+            margin: 0 30px;
+
+            &--wrapper {
+                &-content {
+                    &-item {
+                        .populated__title {
+                            margin-bottom: 30px;
+                        }
+
+                        flex: 0 0 50%;
+
+                        &:first-child {
+                            padding-right: 45px;
+
+                        }
+                    }
+                }
+
+                .populated__images {
+                    display: none;
+
+                }
+            }
+        }
+    }
+}
+
+@include respond(mobile) {
+    .populated {
+        margin: 25px 0;
+        background-image: url('../../assets/images/populated_background3.jpg');
+
+        &__container {
+            padding: 25px 20px 20px 20px;
+
+            &--wrapper {
+                &-content {
+                    flex-wrap: wrap;
+
+                    &-item {
+                        .populated__title {
+                            margin-bottom: 25px;
+                        }
+
+                        flex: 0 0 100%;
+
+                        &:first-child {
+                            padding-right: 0;
+
+                        }
+
+                        &:last-child {
+                            padding: 20px 0px 10px 0px;
+                        }
+                    }
+
+                    .populated__description {
+                        flex-flow: column-reverse;
+                        gap: 0;
+
+                        .populated__icon {
+                            margin: 5px 0 10px 0;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

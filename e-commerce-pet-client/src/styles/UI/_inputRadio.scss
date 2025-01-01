@@ -1,0 +1,55 @@
+.input__radio {
+    width: 100%;
+
+    @include flex(null, null, column, 15px);
+
+    &--title {
+        @include text(2.2rem, 500, $blue-main, 1.27);
+        cursor: pointer;
+    }
+
+    &--item {
+
+        @include flex(null, center, null, null);
+
+        &-radio {
+            position: relative;
+            margin-right: 14px;
+            outline: none;
+            @include text(1.8rem, 400, $blue-main, 1.8rem);
+            @include box(18px, 18px);
+            background-color: #F0F9FC;
+            border: solid 1px rgb(179, 203, 232);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            clear: none;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        input[type=radio]:checked:after {
+            content: '';
+            display: block;
+            @include position (absolute, 4px, 4px, 4px, 4px);
+            position: absolute;
+            background-color: $blue-main;
+            border-radius: 50%;
+        }
+
+        &-value {
+            width: calc(100% - 32px);
+            @include text(1.4rem, null, $blue-main-hover, 2.1rem);
+            @include flex(space-between, center, null, null);
+        }
+
+        &-amount {
+            @include text(1.7rem, 700, $green-1-hover-text, 2.1rem);
+            font-family: $font-quicksan;
+        }
+    }
+
+    small {
+        @include text(1rem, 400, $green-1-hover-text, 1rem);
+    }
+}

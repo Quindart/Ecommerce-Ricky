@@ -1,0 +1,18 @@
+@include respond(desktop) {
+    #widget__home {
+        margin: -60px 0 0;
+
+    }
+}
+
+@include respond(tablet) {
+    #widget__home {
+        margin: -60px 0 0;
+    }
+}
+
+@include respond(mobile) {
+    #widget__home {
+        margin: 0;
+    }
+}

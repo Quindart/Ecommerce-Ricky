@@ -1,0 +1,77 @@
+.pagination {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    @include flex(center, center, null, null);
+
+    &__pages {
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            margin: 2.5px;
+
+        }
+
+        &--btn {
+            @include flex(center, center, null, null);
+            border: solid 1px $border-color-light;
+            border-radius: 50%;
+            text-align: center;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+
+            &:active {
+                margin-top: 2px;
+            }
+
+            &:hover {
+                background-color: $blue-main;
+                color: $white;
+                border-color: $blue-main;
+            }
+
+        }
+
+        .active {
+            color: $white;
+            background-color: $blue-main;
+        }
+
+        .disable {
+            display: none;
+        }
+    }
+}
+
+@include respond(desktop) {
+    .pagination {
+        &__pages {
+            &--btn {
+                @include text(1.8rem, 500, $blue-main, 1);
+                @include box(50px, 50px);
+            }
+        }
+    }
+}
+
+@include respond(tablet) {
+    .pagination {
+        &__pages {
+            &--btn {
+                @include text(1.8rem, 500, $blue-main, 1);
+                @include box(50px, 50px);
+            }
+        }
+    }
+}
+
+@include respond(mobile) {
+    .pagination {
+        &__pages {
+            &--btn {
+                @include text(1.6rem, 500, $blue-main, 1);
+                @include box(35px, 35px);
+            }
+        }
+    }
+}

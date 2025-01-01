@@ -1,0 +1,14 @@
+.section__related__product {
+
+      @include respond(mobile) {
+            margin: 3.5rem 0 2rem;
+      }
+
+      @include respond(tablet) {
+            margin: 3.5rem 0 3rem;
+      }
+
+      @include respond(desktop) {
+            margin: 3.5rem 0 4rem;
+      }
+}

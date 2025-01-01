@@ -1,0 +1,341 @@
+@include respond(desktop) {
+    .about {
+        &__header {
+            min-height: 330px;
+
+            &--breadcrumb {
+                @include position(absolute, 40px, 50px, 0, 50px);
+
+            }
+
+            &--title {
+                @include text(5.4rem, 700, $white, 5.6rem);
+            }
+        }
+
+        &__container {
+            margin-top: 45px;
+            max-width: 1160px;
+            display: flex;
+
+            &--item {
+                flex: 0 0 50%;
+
+                &:first-child {
+                    padding-right: 30px;
+                }
+
+                &-img {
+                    width: 520px;
+                }
+            }
+
+            &--service {
+                &-item {
+                    padding: 0 25px;
+                    flex: 0 0 25%;
+                }
+            }
+
+            .about__overlay {
+                height: 100%;
+            }
+
+        }
+
+        &__instagram {
+            &--wrapper {
+                &-item {
+                    width: 16.66667%;
+                }
+            }
+
+            &--info {
+                min-width: 200px;
+                height: 200px;
+                max-height: 100%;
+
+
+            }
+        }
+    }
+}
+
+@include respond(tablet) {
+    .about {
+        &__header {
+            min-height: 280px;
+
+            &--breadcrumb {
+                @include position(absolute, 25px, 25px, 0, 25px);
+
+            }
+
+            &--title {
+                @include text(3.6rem, 700, $white, 3.8rem);
+
+            }
+        }
+
+        &__container {
+
+            margin: 25px 30px 0 30px;
+
+            &--item {
+                flex: 0 0 50%;
+
+                p {
+                    @include text(1.5rem, 400, $text-color, 2.4rem);
+                    letter-spacing: 0.015em;
+                }
+
+                &:first-child {
+                    padding: 0 30px 20px 0;
+
+                }
+
+                &-sign {
+                    margin-top: 20px;
+                }
+            }
+
+            &--service {
+                &-item {
+                    margin: 10px 0;
+                    flex: 0 0 50%;
+                }
+            }
+        }
+
+        &__instagram {
+            &--wrapper {
+                &-item {
+                    width: 25%;
+
+                }
+            }
+
+            &--info {
+                min-width: 170px;
+                height: 100px;
+
+                a {
+                    @include text(1.7rem, 700, $blue-main, 1.25);
+                }
+            }
+        }
+
+    }
+}
+
+@include respond(mobile) {
+    .about {
+        &__container {
+            margin: 25px 20px 0 20px;
+
+            &--item {
+                flex: 0 0 100%;
+
+                &:first-child {
+                    padding: 0 0 20px 0;
+
+                }
+
+                &:last-child {
+                    padding-left: 0 !important;
+                }
+
+                &-sign {
+                    margin: 15px 0px 20px 0px;
+                }
+
+                &-img {
+                    width: 100%;
+                }
+            }
+
+            &--service {
+                &-item {
+                    padding: 0;
+                    margin: 10px 0;
+                    flex: 0 0 100%;
+                }
+
+            }
+        }
+
+        &__instagram {
+            &--wrapper {
+                &-item {
+                    width: 33.33333%;
+                }
+            }
+        }
+
+        &__heading {
+            h2 {
+                letter-spacing: -0.3px;
+                @include text(2.4rem, 700, $blue-main, 3rem);
+            }
+        }
+    }
+}
+
+.about {
+
+    &__header {
+        position: relative;
+        padding: 60px 50px;
+        background-color: #022d6d;
+        color: $white;
+        background-image: url('../../assets/images/about-header.jpg');
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        @include flex(center, center, column, null);
+
+        &--title {
+            letter-spacing: -0.02em;
+            padding: 0;
+            margin: 0 auto;
+            white-space: normal;
+            max-width: 600px;
+        }
+    }
+
+    &__container {
+
+
+        &--item {
+            position: relative;
+
+            p {
+                font-family: $font-outfit;
+                color: $text-color;
+            }
+
+            &-img {
+                height: auto;
+                max-width: 100%;
+                vertical-align: middle;
+                display: inline-block;
+                border-radius: 30px;
+                transform: rotate(0);
+                transition: $background-hover-transition;
+
+                &:hover {
+                    transform: rotate(-2deg);
+                }
+            }
+
+            &-sign {
+                font-family: $font-quicksan;
+                margin-top: 15px;
+                @include text(1.6rem, 700, $text-color, 2rem);
+                letter-spacing: -0.3px;
+            }
+        }
+
+
+        &--service {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            &-item {
+                @include flex(null, center, null, null);
+
+            }
+
+            &-img {
+                @include box(28px, 28px);
+                margin-right: 15px;
+            }
+
+            &-content {
+                :first-child {
+                    @include text(1.7rem, 700, $blue-main, 1.19);
+                    letter-spacing: -.01em;
+                    font-family: $font-quicksan;
+                }
+
+                :last-child {
+                    @include text(1.3rem, 400, $text-color, 1.46);
+                    letter-spacing: .02em;
+                }
+            }
+        }
+
+        .about__overlay {
+
+            @include flex(center, null, column, null);
+
+            &--seo {
+                @include box(100%, 100%);
+                @include position(absolute, 0, null, null, 0);
+                z-index: -1;
+                background-image: url('../../assets/images/about3.png');
+                background-position: 25px 41px;
+                background-size: contain;
+            }
+
+            &--ourshop {
+                background-image: url('../../assets/images/about4.png');
+                background-position: 62px 34px;
+                @extend .about__overlay--seo
+            }
+        }
+
+        &--wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__instagram {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        &--wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+
+
+            &-item {
+                flex: 0 0 auto;
+                display: block;
+                overflow: hidden;
+            }
+        }
+
+        &--info {
+            @include position(absolute, 50%, null, null, 50%);
+            @include flex(center, center, column, null);
+            transform: translate(-50%, -50%);
+            background-color: hsla(0, 0%, 100%, .85);
+            padding: 20px;
+            border-radius: 8px;
+
+            a {
+                @include text(2rem, 700, $blue-main, 1.25);
+                letter-spacing: -.015em;
+                margin-top: 6px;
+                font-family: $font-quicksan;
+            }
+        }
+    }
+
+    &__heading {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: left;
+
+        h2 {
+            letter-spacing: -0.6px;
+            @include text(2.8rem, 700, $blue-main, 3rem);
+        }
+    }
+}

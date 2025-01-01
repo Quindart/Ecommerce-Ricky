@@ -1,0 +1,22 @@
+.no-match {
+    @include box(100%, 100vh);
+
+    &__img {
+        @include box(100%, 100%);
+        @include flex(center, center, column, null);
+
+        img {
+            object-fit: cover;
+            @include box(35rem, 35rem);
+        }
+    }
+
+    &__button {
+        @include respond (mobile) {
+            margin-top: 1rem;
+
+        }
+
+        margin-top: 2rem;
+    }
+}

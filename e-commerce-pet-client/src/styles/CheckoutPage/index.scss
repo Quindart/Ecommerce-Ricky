@@ -1,0 +1,198 @@
+@include respond(desktop) {
+    .checkout {
+
+        &__container {
+            width: 1160px;
+            margin: 30px auto 40px;
+        }
+
+        &__col {
+            &-left {
+                flex: 1 1 auto;
+                padding: 35px 40px;
+                max-height: 100vh;
+                scrollbar-width: none;
+                overflow-y: scroll;
+            }
+
+            &-right {
+                flex: 0 0 auto;
+                margin: 20px;
+                margin-left: 0;
+                width: 400px;
+                max-width: 100%;
+            }
+        }
+
+        &__billing-fields {
+
+            &-left {
+                float: left;
+                width: 50%;
+                padding-right: 10px;
+            }
+
+            &-right {
+                float: right;
+                width: 50%;
+                padding-left: 10px;
+            }
+
+        }
+
+        &__collaterals {
+            padding: 25px 35px 30px 35px;
+        }
+
+    }
+}
+
+@include respond(tablet) {
+    .checkout {
+        &__container {
+            padding: auto 0;
+            margin: 15px 30px 30px;
+            width: calc(100% - 60px);
+        }
+
+        &__col {
+            &-left {
+                width: 50%;
+                padding: 35px 30px;
+                max-height: 100vh;
+                scrollbar-width: none;
+                overflow-y: scroll;
+            }
+
+            &-right {
+                flex: 0 0 auto;
+                margin: 20px;
+                margin-left: 0;
+                width: 50%;
+                max-width: 100%;
+            }
+        }
+
+        &__collaterals {
+            padding: 20px 25px 25px 25px;
+        }
+    }
+}
+
+@include respond(mobile) {
+    .checkout {
+        &__container {
+            padding: auto 0;
+            margin: 10px 0 20px;
+            width: 100%;
+        }
+
+        &__wrap {
+            @include flex(null, center, column, null);
+            padding: 0 20px 20px 20px;
+        }
+
+        &__col {
+            &-left {
+                max-width: 400px;
+                width: 100%;
+                padding: 35px 0;
+            }
+
+            &-right {
+                flex: 0 0 auto;
+                margin: 0;
+                margin-left: 0;
+                width: 400px;
+                max-width: 100%;
+            }
+        }
+
+        &__collaterals {
+            padding: 20px 15px;
+        }
+    }
+}
+
+
+.checkout {
+    &__container {
+        background: $white;
+        border-radius: 4px;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            @include position(absolute, 0, 0, 0, 0);
+            border-radius: 4px;
+            border: solid 1px $border-color-light;
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+        display: flex;
+    }
+
+    &__billing-fields {
+        margin-top: 15px;
+
+        .form-row {
+            margin-top: 0;
+            margin-bottom: 20px;
+            clear: right;
+        }
+    }
+
+    &__collaterals {
+        border: solid 1px $blue-main;
+        border-radius: 4px;
+    }
+
+    &__sub-header {
+        text-align: left;
+        @include text(2.2rem, 500, $blue-main, 1.27);
+    }
+
+    &__order {
+
+        &-space {
+            padding: 6px 0;
+        }
+
+        &-space2 {
+            padding: 20px 0;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                @include position(absolute, null, 0, null, 0);
+                border-top: solid 1px $border-color-light;
+            }
+        }
+
+        &-name {
+            @include text(1.4rem, 400, $blue-main-hover, 1.27);
+            letter-spacing: 0.02em;
+        }
+
+        &-price {
+            @include text(1.7rem, 700, $blue-main-hover, 2.1rem);
+            letter-spacing: -0.01em;
+            font-family: $font-quicksan;
+            margin-top: 2rem;
+            @include flex(space-between, center, null, null);
+        }
+
+        &-shipping-method {
+            @include flex(null, center, null, null);
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+    }
+
+}

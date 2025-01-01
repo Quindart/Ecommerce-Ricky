@@ -1,0 +1,53 @@
+//class custom for css
+@import './grid';
+
+.w-100 {
+  width: 100%;
+}
+
+.text-center {
+  display: inline-block;
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-5 {
+  gap: 5px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.bg-gray {
+  background: #ddd;
+}
+
+.card {
+  @include box(231px, 400px);
+  border: 1px solid #ddd;
+  padding: 15px 30px;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}

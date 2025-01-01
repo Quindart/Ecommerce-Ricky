@@ -1,0 +1,101 @@
+.testimonials {
+    &__container {
+        &__wrapper {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__title {
+        text-align: center;
+
+        h2 {
+            @include text(3rem, 700, $blue-main, 3.4rem);
+        }
+    }
+
+    &__slider {
+
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9Im5vbmUiIHJ4PSI4IiByeT0iOCIgc3Ryb2tlPSJyZ2JhKDAsIDgyLCAxNzcsIDAuMykiIHN0cm9rZS13aWR0aD0iNCIgc3Ryb2tlLWRhc2hhcnJheT0iMiwgOCIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIHN0cm9rZS1saW5lY2FwPSJidXR0Ii8+PC9zdmc+");
+        border-radius: 8px;
+        margin-top: 25px;
+
+        &--items {
+
+
+            &-text {
+                @include text(1.7rem, 400, $text-color, 1.55);
+                letter-spacing: .015em;
+            }
+
+            &-info {
+                @include flex(null, center, null, 25px);
+                @include text(1.8rem, 700, $blue-main, 1.11);
+                font-family: $font-quicksan;
+                margin-top: 25px;
+                min-height: 70px;
+
+
+                img {
+                    border: 4px solid $white;
+                    @include box(70px, 70px);
+                    object-position: center;
+                    border-radius: 50%;
+                    fill: currentColor;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+}
+
+@include respond(desktop) {
+    .testimonials {
+        margin: 35px 0;
+
+        &__slider {
+            max-width: min(calc(100vw - 100px), calc((100% - 35px*2 - 100px)/3*3 + 35px*2));
+            padding-left: 35px;
+            padding-right: 35px;
+
+            &--items {
+                padding: 47px 60px 49px;
+            }
+        }
+    }
+}
+
+@include respond(tablet) {
+    .testimonials {
+        margin: 35px 0;
+
+        &__slider {
+            max-width: min(calc(100vw - 60px), calc((100% - 35px*2 - 100px)/3*3 + 35px*2));
+            margin-bottom: 33px;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            &--items {
+                padding: 20px 30px;
+            }
+        }
+    }
+}
+
+
+@include respond(mobile) {
+    .testimonials {
+        margin: 30px 0 0 0;
+
+        &__slider {
+            padding: 0;
+            margin-bottom: 33px;
+            max-width: calc(100vw - 40px);
+
+            &--items {
+                padding: 20px 20px 25px;
+            }
+        }
+    }
+}

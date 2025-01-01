@@ -1,0 +1,363 @@
+.detail {
+    &__header {
+        width: 100%;
+
+        &--breadcrumb {
+            padding: 26px 50px 28px 50px;
+            color: $blue-main;
+            background-color: $white;
+        }
+
+    }
+
+    &__container {
+        max-width: 1160px;
+        min-width: 320px;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 4px;
+        border: solid 1px $border-color-light;
+        background-color: $white;
+
+        &--wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+
+            &-item {
+                &.right {
+
+
+                    .detail__share {
+                        @include flex(null, center, null, 30px);
+
+                        &--inner {
+                            flex: 1 1 auto;
+                            min-width: 100px;
+
+                            a {
+                                @include text(1.8rem, 500, $blue-main, 1);
+                                letter-spacing: 0.015em;
+                            }
+                        }
+
+                        &--btn {
+                            flex: 0 0 auto;
+
+                            svg {
+                                color: $blue-main;
+                                @include box(25px, 25px)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__product {
+
+        &-images {
+            max-height: 58rem;
+            object-fit: contain;
+        }
+    }
+
+    &__title {
+        margin-top: 15px;
+        letter-spacing: -0.02em;
+    }
+
+    &__sku {
+        display: block;
+        margin-top: 20px;
+        @include text(1.2rem, 600, $text-color, 1.25);
+        letter-spacing: 0.02em;
+
+        :first-child {
+            @include text(1.2rem, 400, $text-color, 1.25);
+        }
+    }
+
+    &__description {
+        margin-top: 20px;
+
+        p {
+            @include text(1.4rem, 400, $text-color, 1.5);
+            letter-spacing: 0.02em;
+            font-family: $font-outfit;
+
+        }
+    }
+
+    &__variations {
+        margin: 25px 0 -15px 0;
+        width: 100%;
+        position: relative;
+        display: block;
+
+        &--label {
+            display: block;
+            text-align: left;
+            padding-bottom: 10px;
+
+            label {
+                @include text(1.2rem, 600, $text-color, 1.5);
+                letter-spacing: 0.02em;
+
+            }
+        }
+
+        &--value {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: -2.5px -2.5px 12.5px -2.5px;
+
+            li {
+                flex: 0 0 auto;
+                min-width: 0;
+                max-width: 100%;
+                margin: 2.5px;
+                position: relative;
+                cursor: pointer;
+
+                span {
+                    display: block;
+                    @include text(1.3rem, 500, $blue-main, 1.6rem);
+                    text-align: center;
+                    letter-spacing: 0.01em;
+                    border-radius: 13px;
+                    padding: 5px 9px;
+                    transition: $hover-transition;
+                    background-color: #F0F9FC;
+                    border: 1px solid #F0F9FC;
+
+
+                    &:hover {
+                        border-color: $blue-main;
+                    }
+                }
+
+                .active {
+                    border: 1px solid $blue-main;
+                }
+            }
+
+            &-clear {
+                @include position(absolute, 0, 0, null, null);
+                @include flex(null, center, null, 4px);
+                @include text(1.2rem, 600, $blue-main, 1.5rem);
+            }
+        }
+
+        &--price {
+            font-family: $font-quicksan;
+            @include text(2.5rem, 700, $green-1-hover-text, 1.24);
+            letter-spacing: -0.02em;
+        }
+
+        &--availability {
+            font-family: $font-outfit;
+            margin-top: 25px;
+            @include text(1.2rem, 600, #D1333C, 1.5rem);
+            letter-spacing: 0.02em;
+        }
+    }
+
+    &__atc {
+        &--wrapper {
+            display: inline-flex;
+            flex-direction: column;
+            margin-top: 20px;
+
+        }
+
+        &--row-1 {
+            @include flex(null, center, null, 5px);
+        }
+
+        &--row-2 {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+
+    &__meta {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        column-gap: 30px;
+
+        &--link {
+            display: block;
+            @include text(1.2rem, 600, $text-color, 1.25);
+            letter-spacing: 0.02em;
+            margin-top: 10px;
+
+            :first-child {
+                @include text(1.2rem, 400, $text-color, 1.25);
+            }
+
+
+            a {
+                color: $blue-main !important;
+                @include text(1.2rem, 400, $text-color, 1.25);
+
+                &:hover {
+                    color: $green-1-hover-text !important;
+                }
+            }
+        }
+
+    }
+
+    &__features {
+        margin-top: 25px;
+        border-radius: 4px;
+        padding: 8px 0;
+        border: dashed 1px #DCEAF6;
+        background-color: #F0F9FC;
+        display: inline-flex;
+        flex-direction: column;
+
+        &--item {
+            @include flex(null, center, null, null);
+            -moz-column-gap: 15px;
+            column-gap: 15px;
+            margin: 8px 20px;
+
+            svg {
+                color: $green-1;
+            }
+
+            span {
+                @include text(1.4rem, 400, $blue-main, 1.4);
+                display: block;
+                font-style: normal;
+                letter-spacing: 0.02em;
+            }
+        }
+    }
+
+    &__custom {
+        margin-top: 20px;
+
+        ul {
+            columns: 2;
+
+            li {
+                @include flex(null, center, null, null);
+                @include text(1.4rem, 400, $text-color, 1.5);
+                margin-bottom: 5px;
+                letter-spacing: 0.02em;
+
+                svg {
+                    padding-right: 5px;
+                    color: $green-1;
+                }
+            }
+        }
+    }
+
+    &__tab {
+        display: flex;
+        width: 100%;
+        margin-bottom: 70px;
+
+        &--wrapper {
+            width: 100%;
+            @include flex(center, center, null, null);
+            margin: 45px 35px 35px 35px;
+        }
+    }
+}
+
+@include respond(desktop) {
+    .detail {
+        &__container {
+            margin-top: 30px;
+            margin-bottom: 30px;
+
+            &--wrapper {
+                &-item {
+                    width: 50%;
+
+                }
+
+                .right {
+                    padding: 35px 50px 0 50px;
+                }
+            }
+        }
+
+        &__meta {
+            margin-left: 45px;
+            margin-top: 25px;
+            margin: 25px 0 0 45px;
+        }
+
+        &__title {
+            @include text(4rem, 700, $blue-main, 1.15);
+        }
+
+        &__atc {
+            &--btn {
+                @include text(1.2rem, 700, $white, 1.5rem);
+                letter-spacing: 0.03em;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+
+@include respond(tablet) {
+    .detail {
+        &__container {
+            &--wrapper {
+                &-item {
+                    width: 50%;
+
+                }
+
+                .right {
+                    padding: 35px 50px 0 50px;
+                }
+            }
+        }
+
+        &__meta {
+            margin: 25px 0 0 35px;
+        }
+
+        &__title {
+            @include text(2.6rem, 700, $blue-main, 1.15);
+        }
+    }
+}
+
+@include respond(mobile) {
+    .detail {
+        &__container {
+            &--wrapper {
+                &-item {
+                    width: 100%;
+
+                }
+
+                .right {
+                    margin: 20px 35px 0;
+                }
+            }
+        }
+
+        &__meta {
+            margin: 25px 35px 0 35px;
+        }
+
+        &__title {
+            @include text(2.6rem, 700, $blue-main, 1.15);
+        }
+    }
+}

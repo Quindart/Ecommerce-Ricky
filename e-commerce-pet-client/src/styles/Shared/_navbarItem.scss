@@ -1,0 +1,275 @@
+@include respond (desktop) {
+    .top-menu__list--header {
+        padding: 0;
+        margin: 0 -1.5rem;
+        display: flex;
+        width: 100%;
+
+    }
+
+    .top-menu__item--header {
+        position: relative;
+        flex: 0 0 auto;
+        margin: 0 2rem;
+
+        &>span {
+            cursor: pointer;
+            @include text(calc(18*100vw/1920), 600, $white, 2.4rem);
+            @include flex(center, center, null, null);
+            letter-spacing: 0.065em;
+            text-transform: uppercase;
+
+            &:hover {
+                color: #5b85c3;
+            }
+
+            &>a {
+                cursor: pointer;
+                @include text(calc(18*100vw/1920), 600, $white, 2.4rem);
+                @include flex(center, center, null, null);
+                letter-spacing: 0.065em;
+                text-transform: uppercase;
+                transition: none;
+
+                &:hover {
+                    color: #5b85c3;
+                }
+            }
+        }
+
+        &-icon {
+            color: #5b85c3;
+            margin-right: calc(18 / 17 * 15 * (100vw - 600px) / (1920 - 600));
+        }
+
+        &:hover>.large--menu {
+            opacity: 1;
+            visibility: visible;
+            transition: visibility 0.15s linear, opacity 0.15s linear;
+        }
+
+        .submenu--item-link {
+            display: block;
+            padding: 0.7rem 0;
+            @include text(1.5rem, 500, $blue-main, 2.2rem);
+            text-transform: capitalize;
+
+            &:hover {
+                color: $green-1-hover-text;
+            }
+        }
+
+        .large--menu {
+            &::before {
+                content: '';
+                display: block;
+                @include position(absolute, -1.5rem, 0, null, 0);
+                height: 1.5rem;
+
+            }
+
+            @include position(absolute, 100%, null, null, -4rem);
+            @include text(null, normal, $blue-main, null);
+            width: calc(calc((1160px - 4rem)/4) * 4 + 4rem);
+            margin: 1.5rem 0 0 0;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: none;
+            text-transform: none;
+            background-color: $white;
+            box-shadow: $box-shadow;
+            @include flex(null, flex-start, column, null);
+            flex-wrap: wrap;
+            border-radius: 0.8rem;
+
+            &::after {
+                content: '';
+                display: block;
+                @include position(absolute, -1.8rem, null, null, 25%);
+                height: 1rem;
+                border: solid 0.5rem transparent;
+                border-bottom-color: $white;
+            }
+
+            .large--container {
+                padding: 4rem;
+                width: 100%;
+                display: flex;
+
+                .large--left {
+                    width: 20%;
+
+                    .large--title {
+                        @include text(2.3rem, 500, #00234B, 1);
+                        font-style: normal;
+                        letter-spacing: -.025em;
+                        padding: 7px 0;
+                    }
+
+                    .menu--submenu-large {
+                        margin-top: 10px;
+                        letter-spacing: .005em;
+                        position: relative;
+
+
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            @include position(absolute, -1.8rem, null, null, 25% !important);
+                            height: 1rem;
+                            border: solid 0.5rem transparent;
+                            border-bottom-color: $white;
+                        }
+                    }
+                }
+
+                .large--center {
+                    width: 40%;
+                    padding: 0;
+
+                    .product--grid-list {
+                        @include flex(flex-start, null, null, null);
+                        column-gap: 40px;
+                        flex-wrap: wrap;
+                        margin-bottom: -3rem;
+
+                        .product--grid-item {
+                            width: 305px;
+                            flex: 0 0 auto;
+                            min-width: 0;
+                            max-width: 100%;
+                            @include flex(null, center, null, null);
+                            position: relative;
+                            -moz-column-gap: 2rem;
+                            column-gap: 2rem;
+                            margin-bottom: 3rem;
+
+                            .product--grid-thumb {
+                                position: relative;
+                                flex: 0 0 auto;
+                                @include box(9rem, 75rem);
+                                border-radius: 0.4rem;
+                                overflow: hidden;
+                                align-self: flex-start;
+
+                                img {
+                                    @include box(100%, 100%);
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .product--grid-title {
+                                flex: 1 1 auto;
+                                min-width: 0;
+
+                                .product--grid-title-price {
+                                    color: #F63E04;
+                                    margin-top: 1rem;
+                                }
+
+                                .product--grid-title-link,
+                                .product--grid-title-price {
+                                    @include text(1.6rem, 700, null, 1.25);
+                                    letter-spacing: .005em;
+                                    font-family: $font-quicksan;
+
+                                    &:hover {
+                                        color: #F63E04 !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .large--right {
+                    @include box(40%, 100%);
+                    cursor: pointer;
+                    @include flex(null, center, null, null);
+
+                    .widget--wrap {
+                        @include box(100%, 39rem);
+                        background: url('../../assets/images/widget1.jpg');
+                        overflow: hidden;
+                        border-radius: 0.4rem;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-color: #DCEAF6;
+                        transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                        padding: 4rem;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+
+                        .widget--heading {
+                            width: 100%;
+                            padding-bottom: 1.5rem;
+
+                            h2 {
+                                @include text(4rem, 700, null, 4.3rem);
+                                letter-spacing: -0.025em;
+                            }
+                        }
+
+                        .widget--heading-title {
+                            margin: 1.5rem 0px 3.5rem 0px;
+
+                            h2 {
+                                font-family: $font-outfit;
+                                @include text(1.9rem, 400, #00234B, 1);
+                                letter-spacing: -0.005em;
+                            }
+                        }
+
+                        img {
+                            @include box(100%, 100%)
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &:hover>.top-menu__submenu {
+            opacity: 1;
+            visibility: visible;
+            transition: visibility 0.15s linear, opacity 0.15s linear;
+        }
+
+        .top-menu__submenu {
+            &::before {
+                content: '';
+                display: block;
+                @include position(absolute, -1.5rem, 0, null, 0);
+                height: 1.5rem;
+
+            }
+
+            @include position(absolute, null, null, null, -4rem);
+            @include flex(null, flex-start, column, null);
+            padding: 3rem 2rem;
+            min-width: 25rem;
+            margin: 1.5rem 0 0 0;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: none;
+            text-transform: none;
+            font-weight: normal;
+            background-color: $white;
+            box-shadow: 0 0.1rem 0.6rem rgba(20, 58, 102, 0.23);
+            flex-wrap: wrap;
+            border-radius: 0.8rem;
+
+            &::after {
+                content: '';
+                display: block;
+                @include position(absolute, -1.8rem, null, null, 25%);
+                height: 1rem;
+                border: solid 0.5rem transparent;
+                border-bottom-color: $white;
+            }
+        }
+    }
+}

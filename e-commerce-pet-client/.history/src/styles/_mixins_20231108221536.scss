@@ -1,0 +1,148 @@
+//Animation
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+//Base
+@mixin flex(
+    $justify-content: normal,
+    $align-items: normal,
+    $direction: row,
+    $gap: 0
+) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+@mixin text(
+    $font-size,
+    $font-weight,
+    $color: $text-primary,
+    $line-height: 1.5
+) {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+    line-height: $line-height;
+}
+@mixin grid($template-columns, $template-rows, $gap: 0) {
+    display: grid;
+    grid-template-columns: $template-columns;
+    grid-template-rows: $template-rows;
+    grid-gap: $gap;
+}
+
+@mixin image($object-fit, $width, $height) {
+    object-fit: $object-fit;
+    width: $width;
+    height: $height;
+}
+
+@mixin bg-image($url, $width, $height, $size) {
+    width: $width;
+    height: $height;
+    background-image: url($url);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $size;
+}
+
+@mixin box($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin position($position, $top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin btn-size($x, $y) {
+    padding: $x $y;
+}
+
+@mixin color-scheme(
+    $text-color,
+    $placeholder-color,
+    $border-color,
+    $background-color,
+    $outline-color
+) {
+    color: $text-color;
+    &::placeholder {
+        color: $placeholder-color;
+    }
+    border: solid 1px $border-color;
+    background-color: $background-color;
+    &:focus {
+        outline: 1px solid $outline-color;
+    }
+}
+
+// MEDIA QUERY MANAGER
+/* 
+  600px and down for mobile devices
+  600px - 768px: large-mobil / portrait tablets
+  768px - 1024px:  tab / landscape tablets
+  1024px -1200: laptop / medium desktop
+  >1200px:  large desktop / large laptop
+  
+  
+  
+  keyword for breakpoint: 
+  
+  large-mobile,
+  tablet
+  desktop, 
+  large-desktop
+  */
+@mixin respond($breakpoint) {
+    @if $breakpoint == large-mobile {
+        @media only screen and (max-width: 640px) {
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (max-width: 1024px) {
+            @content;
+        }
+    }
+    @if $breakpoint == large-desktop {
+        @media only screen and (max-width: 1200px) {
+            @content;
+        }
+    }
+}

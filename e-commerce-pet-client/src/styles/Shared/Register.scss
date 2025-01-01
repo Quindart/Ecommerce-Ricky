@@ -1,0 +1,85 @@
+.common-styles {
+    margin: 10px 0 25px 0;
+    @include text(1.4rem, null, $text-color, 1.5);
+    letter-spacing: 0.02em;
+}
+
+.common-link-styles {
+    font-size: 1.4rem;
+    color: $blue-main;
+
+    &:hover {
+        color: $green-1-hover-text;
+    }
+}
+
+@include respond(desktop) {
+    .register {
+        width: 1160px;
+        margin: 30px auto 40px;
+    }
+}
+
+@include respond(tablet) {
+    .register {
+        width: calc(100% - 60px);
+        margin: 15px 30px 30px;
+    }
+}
+
+@include respond(mobile) {
+    .register {
+        width: calc(100% - 60px);
+        margin: 10px 30px 20px;
+    }
+}
+
+.register {
+    border: 1px solid $border-color-light;
+    background-color: $white;
+    border-radius: 4px;
+
+    &__header {
+        @include text(2.7rem, 700, $blue-main, 1.27);
+        font-family: $font-quicksan;
+        text-align: center;
+        letter-spacing: -0.01em;
+        margin-bottom: 35px;
+    }
+
+    &__content {
+        width: 380px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    &__form {
+        padding: 40px 20px 50px 20px;
+    }
+
+
+    &__policy {
+
+        p,
+        a {
+            @extend .common-styles;
+            font-family: $font-outfit;
+        }
+
+        a {
+            @extend .common-link-styles;
+        }
+    }
+
+    &__bottom {
+        margin-top: 32px;
+        @include flex(center, center, null, 20px);
+        text-transform: capitalize;
+        @include text(1.4rem, null, $text-color, 1.5);
+        letter-spacing: 0.02em;
+
+        a {
+            @extend .common-link-styles;
+        }
+    }
+}

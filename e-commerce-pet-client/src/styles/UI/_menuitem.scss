@@ -1,0 +1,391 @@
+.menu--submenu {
+    position: absolute;
+}
+
+@include respond(desktop) {
+
+    .header--list {
+        .header--item {
+            .header--menu-list {
+                padding: 0;
+                margin: 0 -15px;
+                display: flex;
+                width: 100%;
+
+                .header--menu-item {
+                    position: relative;
+                    flex: 0 0 auto;
+                    margin: 0 15px;
+
+                    .navigation--link {
+                        @include text(calc(18*100vw/1920), 600, currentColor, 2.4rem);
+                        @include flex(center, center, null, null);
+                        letter-spacing: 0.065em;
+
+                        .icon {
+                            margin-right: calc(18 / 17 * 15 * (100vw - 600px) / (1920 - 600));
+
+                        }
+
+                        &:hover {
+                            color: #f63e04;
+                        }
+                    }
+
+                    a {
+                        @include text(1.2rem, 600, currentColor, 1.8rem);
+                        letter-spacing: 0.045em;
+                        display: flex;
+                        color: currentColor;
+                    }
+
+                    &:hover>.menu--submenu {
+                        opacity: 1;
+                        visibility: visible;
+                        transition: visibility 0.15s linear, opacity 0.15s linear;
+                    }
+
+
+                    // LARGE MENU 
+
+                    &:hover>.large--menu {
+                        opacity: 1;
+                        visibility: visible;
+                        transition: visibility 0.15s linear, opacity 0.15s linear;
+                    }
+
+                    .large--menu {
+                        &::before {
+                            content: '';
+                            display: block;
+                            @include position(absolute, -15px, 0, null, 0);
+                            height: 15px;
+
+                        }
+
+                        @include position(absolute, 100%, null, null, -40px);
+                        width: calc(calc((1160px - 40px)/4) * 4 + 40px);
+                        margin: 10px 0 0 0;
+                        z-index: 1000;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: none;
+                        text-transform: none;
+                        font-weight: normal;
+                        color: #0052B1;
+                        background-color: $white;
+                        box-shadow: $box-shadow;
+                        @include flex(null, flex-start, column, null);
+                        flex-wrap: wrap;
+                        border-radius: 8px;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            @include position(absolute, -18px, null, null, 25%);
+                            height: 10px;
+                            border: solid 5px transparent;
+                            border-bottom-color: $white;
+                        }
+
+                        .large--container {
+                            padding: 40px;
+                            width: 100%;
+                            display: flex;
+
+                            .large--left {
+                                width: 20%;
+
+                                .large--title {
+                                    @include text(2.3rem, 500, #00234B, 1);
+                                    font-style: normal;
+                                    letter-spacing: -.025em;
+                                    padding: 7px 0;
+                                }
+
+                                .menu--submenu-large {
+                                    margin-top: 10px;
+                                    letter-spacing: .005em;
+                                    position: relative;
+                                    padding: 0;
+                                    list-style: none;
+
+                                    .submenu--item-link {
+                                        display: block;
+                                        padding: 7px 0;
+                                        @include text(1.5rem, 500, null, 2.2rem);
+                                    }
+
+                                    &::after {
+                                        content: '';
+                                        display: block;
+                                        @include position(absolute, -18px, null, null, 25% !important);
+                                        height: 10px;
+                                        border: solid 5px transparent;
+                                        border-bottom-color: $white;
+                                    }
+                                }
+                            }
+
+                            .large--center {
+                                width: 40%;
+                                padding: 0;
+
+                                .product--grid-list {
+                                    @include flex(flex-start, null, null, null);
+                                    column-gap: 40px;
+                                    flex-wrap: wrap;
+                                    margin-bottom: -30px;
+
+                                    .product--grid-item {
+                                        width: 305px;
+                                        flex: 0 0 auto;
+                                        min-width: 0;
+                                        max-width: 100%;
+                                        @include flex(null, center, null, null);
+                                        position: relative;
+                                        -moz-column-gap: 20px;
+                                        column-gap: 20px;
+                                        margin-bottom: 30px;
+
+                                        .product--grid-thumb {
+                                            position: relative;
+                                            flex: 0 0 auto;
+                                            @include box(90px, 75px);
+                                            border-radius: 4px;
+                                            overflow: hidden;
+                                            align-self: flex-start;
+
+                                            img {
+                                                @include box(100%, 100%);
+                                                object-fit: cover;
+                                            }
+                                        }
+
+                                        .product--grid-title {
+                                            flex: 1 1 auto;
+                                            min-width: 0;
+
+                                            .product--grid-title-price {
+                                                color: #F63E04;
+                                                margin-top: 10px;
+                                            }
+
+                                            .product--grid-title-link,
+                                            .product--grid-title-price {
+                                                @include text(1.6rem, 700, null, 1.25);
+                                                letter-spacing: .005em;
+                                                font-family: $font-quicksan;
+
+                                                &:hover {
+                                                    color: #F63E04 !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .large--right {
+                                @include box(40%, 100%);
+                                cursor: pointer;
+                                @include flex(null, center, null, null);
+                                align-content: center;
+
+                                .widget--wrap {
+                                    @include box(100%, 390px);
+                                    background: url('../../assets/images/widget1.jpg');
+                                    overflow: hidden;
+                                    border-radius: 4px;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    border-color: #DCEAF6;
+                                    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+                                    padding: 40px;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+
+                                    .widget--heading {
+                                        width: 100%;
+                                        padding-bottom: 15px;
+
+                                        h2 {
+                                            @include text(4rem, 700, null, 4.3rem);
+                                            letter-spacing: -0.025em;
+                                        }
+                                    }
+
+                                    .widget--heading-title {
+                                        margin: 15px 0px 35px 0px;
+
+                                        h2 {
+                                            font-family: $font-outfit;
+                                            @include text(1.9rem, 400, #00234B, 1);
+                                            letter-spacing: -0.005em;
+                                        }
+                                    }
+
+                                    img {
+                                        @include box(100%, 100%)
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    // LARGE MENU
+
+                    // SUBMENU
+                    .menu--submenu {
+                        &::before {
+                            content: '';
+                            display: block;
+                            @include position(absolute, -10px, -10px, null, -10px);
+                            height: 10px;
+                        }
+
+                        @include position(absolute, 100%, null, null, 0);
+                        @include flex(null, center, column, null);
+                        @include text(null, normal, $blue-main, null);
+                        flex-wrap: wrap;
+                        margin: 10px 0 0 0;
+                        padding: 23px 0;
+                        min-width: 250px;
+                        z-index: 1000;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: none;
+                        text-transform: none;
+                        background-color: $white;
+                        box-shadow: $box-shadow;
+                        border-radius: 8px;
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            @include position(absolute, -18px, null, null, 10px);
+                            height: 10px;
+                            border: solid 5px transparent;
+                            border-bottom-color: $white;
+                        }
+
+                        .submenu--item,
+                        .menu--item {
+                            @include text(1.3rem, 600, null, 1.6rem);
+                            width: 100%;
+                            letter-spacing: 0.045em;
+                            text-transform: uppercase;
+                            position: relative;
+
+                            &:hover>.menu--submenu {
+                                opacity: 1;
+                                visibility: visible;
+                                transition: visibility 0.15s linear, opacity 0.15s linear;
+                            }
+
+                            &-link {
+                                @include flex(space-between, center, null, null);
+                                padding: 10px 30px;
+                                transition: $hover-transition;
+
+                                svg {
+                                    @include position(absolute, 9px, 30px, null, null);
+                                    display: inline-block;
+                                    @include text(1.6rem, 800, rgb(128, 169, 216) !important, 1.6rem);
+                                    transform: rotate(-90deg);
+                                }
+                            }
+                        }
+                    }
+
+                    // SUBMENU
+
+                    // LANGUAGE
+                    .language {
+                        &::before {
+                            content: '';
+                            display: block;
+                            @include position(absolute, -10px, -10px, null, -10px);
+                            height: 10px;
+                        }
+
+                        @include position(absolute, 100%, -5px, null, unset);
+                        @include text(null, normal, $blue-main, null);
+
+                        padding: 23px 0;
+                        margin: 10px 0 0 0;
+                        width: 250px;
+                        z-index: 1000;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: none;
+                        text-transform: none;
+                        background-color: $white;
+                        box-shadow: $box-shadow;
+                        @include flex(null, center, column, null);
+                        flex-wrap: wrap;
+                        border-radius: 8px;
+                        -webkit-box-align: start;
+                        text-align: left;
+
+                        .submenu--item,
+                        .menu--item {
+                            @include text(1.3rem, 600, null, 1.6rem);
+                            width: 100%;
+                            letter-spacing: 0.045em;
+                            text-transform: uppercase;
+                            position: relative;
+
+                            &:hover>.menu--submenu {
+                                opacity: 1;
+                                visibility: visible;
+                                transition: visibility 0.15s linear, opacity 0.15s linear;
+                            }
+
+                            &-link {
+                                @include flex(space-between, center, null, null);
+                                padding: 10px 30px;
+                                transition: $hover-transition;
+
+                                svg {
+                                    @include position(absolute, 9px, 30px, null, null);
+                                    display: inline-block;
+                                    @include text(1.6rem, 800, rgb(128, 169, 216) !important, 1.6rem);
+                                    transform: rotate(-90deg);
+                                }
+                            }
+                        }
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            @include position(absolute, -18px, 15px, null, null);
+                            height: 10px;
+                            border: solid 5px transparent;
+                            border-bottom-color: $white;
+                        }
+                    }
+
+                    &:hover>.language {
+                        opacity: 1;
+                        visibility: visible;
+                        transition: visibility 0.15s linear, opacity 0.15s linear;
+                    }
+
+                    .menu--submenu--last {
+                        left: 100%;
+                        top: -23px;
+                        margin-top: 0;
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+
+                    // LANGUAGE                   
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.options__size {
+    max-width: 100%;
+    @include text(1.3rem, 500, $blue-main, 1.6rem);
+    letter-spacing: 0.01em;
+    padding: 8px 28px 8px 9px;
+    background-color: #f0f9fc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    appearance: none;
+    background-repeat: no-repeat;
+    border: solid 1px rgb(179, 203, 232);
+    height: auto !important;
+    min-width: 0;
+    font-family: $font-outfit;
+    text-transform: capitalize;
+    background-image: url("../../assets/svg/dropdownIcon.svg");
+    background-position: right 10px top 50%;
+
+    &:focus {
+        outline: none;
+        border: solid 1px $blue-main;
+    }
+
+    option {
+        @include text(1.3rem, 500, $blue-main, 1.6rem);
+    }
+}

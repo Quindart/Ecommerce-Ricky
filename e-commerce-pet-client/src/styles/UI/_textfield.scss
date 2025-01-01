@@ -1,0 +1,141 @@
+.textfield {
+  width: 100%;
+  position: relative;
+
+  label {
+    width: 100%;
+    display: block;
+    padding-bottom: 10px;
+    @include text(1.3rem, 400, $blue-main, 1.8rem);
+    letter-spacing: 0.02em;
+    background-color: transparent !important;
+    border: none !important;
+  }
+
+  &__input-wrap {
+    position: relative;
+  }
+
+  .error {
+    width: 100%;
+    display: block;
+    padding-top: 4px;
+    @include text(1.2rem, 400, #ff3333, 1.2rem);
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+  }
+
+  .require {
+    color: #ff3333;
+  }
+
+  .input {
+    margin: 0;
+    padding: 10px 70px 10px 10px;
+    border: none;
+    background: transparent;
+    display: block;
+    width: 100%;
+    font-style: normal;
+    font-family: $font-quicksan;
+    letter-spacing: 0.01em;
+    border-radius: 3px;
+    @include text(1.3rem, 700, color, 1.6rem);
+
+    &--form,
+    &--password {
+      @include text(1.3rem, 700, color, 1.6rem);
+      padding: 10px 12px;
+      height: auto !important;
+      min-width: 0;
+      border-radius: 3px;
+    }
+
+    &--search-type {
+      @include text(1.8rem, 400, color, 0);
+      padding: 0 0 15px 0;
+      border: none !important;
+      border-bottom: solid 2px currentColor !important;
+      background-color: transparent !important;
+      letter-spacing: 0.01em;
+      font-family: $font-outfit;
+
+      &:focus {
+        outline: none !important;
+      }
+    }
+
+    &--checkbox {
+      position: relative !important;
+      z-index: 1;
+      @include box(18px, 18px);
+      margin: -0.15rem 7px 0 0;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      clear: none;
+      cursor: pointer;
+      outline: 0;
+      padding: 0 !important;
+      text-align: center;
+      vertical-align: middle;
+      // display: inline-flex !important;
+      // align-items: center;
+      // justify-content: center;
+      @include flex(center, center, row, 0) // &:checked + label::before {
+      //     content: "\2713";
+      //     font-size: 14px;
+      //     color: #00b894; /* Màu của dấu tích khi checkbox được chọn */
+      //     position: absolute;
+      //     top: 50%;
+      //     left: 50%;
+      //     transform: translate(-50%, -50%);
+      // }
+      ;
+    }
+
+    &--green {
+      @include color-scheme($dark-green,
+        rgb(185, 204, 192),
+        rgb(185, 204, 192),
+        #f2fbf2,
+        $dark-green );
+    }
+
+    &--blue {
+      @include color-scheme($blue-main,
+        rgb(179, 203, 232),
+        rgb(179, 203, 232),
+        #f0f9fc,
+        $blue-main );
+    }
+
+    &--black {
+      @include color-scheme($black,
+        rgb(181, 185, 190),
+        rgb(181, 185, 190),
+        #f1f4f4,
+        $black );
+    }
+
+    &--brown {
+      @include color-scheme($brown,
+        rgb(198, 186, 183),
+        rgb(198, 186, 183),
+        #fcf9f7,
+        $brown );
+    }
+
+    &--purple {
+      @include color-scheme($purple,
+        rgb(203, 185, 222),
+        rgb(203, 185, 222),
+        #fcf3ff,
+        $purple );
+    }
+
+    &__input-wrap {
+      @include flex(null, center, null, null);
+    }
+  }
+}

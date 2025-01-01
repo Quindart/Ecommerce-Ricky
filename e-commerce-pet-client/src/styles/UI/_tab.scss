@@ -1,0 +1,117 @@
+@include respond(desktop) {
+    .tabs {
+        &__menu {
+            &--item {
+                padding-bottom: 23px;
+
+                &:not(:last-child) {
+                    margin-right: 40px;
+                }
+
+                &-link {
+                    font-style: normal;
+                    @include text(2.2rem, 500, $blue-main, 1.27);
+                }
+            }
+        }
+    }
+}
+
+@include respond(tablet) {
+    .tabs {
+        &__menu {
+            &--item {
+                padding-bottom: 23px;
+
+                &:not(:last-child) {
+                    margin-right: 40px;
+                }
+
+                &-link {
+                    font-style: normal;
+                    @include text(2.2rem, 500, $blue-main, 1.27);
+                }
+            }
+        }
+    }
+}
+
+@include respond(mobile) {
+    .tabs {
+        margin: 0 auto;
+        overflow: hidden;
+        max-width: calc(100vw - 90px);
+
+        &__menu {
+            max-height: calc(100vh - 3rem);
+            overflow-y: auto;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+
+            &::-webkit-scrollbar {
+                display: none;
+                /* Chrome, Safari, and Opera */
+            }
+
+            &--item {
+                padding-bottom: 20px;
+
+                &:not(:last-child) {
+                    margin-right: 46px;
+                }
+
+                &-link {
+                    @include text(2rem, 500, $blue-main, 1.27);
+
+                }
+            }
+        }
+    }
+}
+
+
+.tabs {
+
+    &__menu {
+        &::before {
+            @include position(absolute, null, 0, 0, 0);
+            content: "";
+            display: block;
+            border-bottom: 2px solid $border-color-light;
+        }
+
+        max-width: 1160px;
+        display: inline-flex;
+        position: relative;
+        margin: 0;
+        padding: 0;
+
+        .active {
+            opacity: 1;
+            border-bottom-color: $blue-main;
+        }
+
+        &--item {
+            z-index: 1;
+            position: relative;
+            flex: 0 0 auto;
+            margin: 0;
+            border-bottom: 2px solid transparent;
+            opacity: .7;
+            cursor: pointer;
+            text-transform: capitalize;
+
+            &:hover {
+                opacity: 1;
+                color: $blue-main;
+            }
+        }
+    }
+
+    &__content {
+        transition: 5s;
+    }
+
+}

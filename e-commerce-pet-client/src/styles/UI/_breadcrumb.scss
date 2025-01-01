@@ -1,0 +1,36 @@
+.breadcrumbs {
+
+    color: currentColor;
+
+    &__list {
+        margin: 0 auto;
+        max-width: 100%;
+        width: 780px;
+        padding: 0;
+        @include flex(center, center, null, null);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        @include flex(null, center, null, null);
+
+        a {
+            letter-spacing: 0.015em;
+            @include text(1.3rem, 500, currentColor, 1.23);
+            text-transform: capitalize;
+
+            &:not(:last-child):hover {
+                color: #F63E04;
+                cursor: pointer;
+
+            }
+
+            &:last-child {
+                cursor: auto;
+            }
+        }
+
+
+
+    }
+}

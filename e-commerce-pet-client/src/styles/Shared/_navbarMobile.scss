@@ -1,0 +1,151 @@
+.navbar__mobile {
+    @include position(fixed, 0, null, null, 0);
+    z-index: 1200;
+    @include box(100%, 100%);
+    max-width: 415px;
+    min-width: 320px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s linear, visibility 0.3s linear;
+    color: $white;
+    box-shadow: 0 1px 6px rgba(20, 58, 102, 0.23);
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &-shadow {
+        @include position(absolute, 0, 0, 0, 0);
+        background-color: rgba(0, 35, 75, 0.97);
+    }
+
+    &-btn {
+        @include position(absolute, 0, null, null, 0);
+        @include box(100%, 6rem);
+        @include flex(null, center, null, null);
+        @include px(2.5rem);
+
+        &-back {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s linear, visibility 0.3s linear;
+            white-space: nowrap;
+            @include flex(null, center, null, 0.6rem);
+            @include text(1rem, 700, $white, 1);
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            svg {
+                @include box(2rem, 2rem);
+            }
+        }
+
+        &-close {
+            @include text(2.5rem, null, $white, 1);
+            margin-left: auto;
+            text-align: center;
+
+            &:active {
+                @include button-active()
+            }
+
+            svg {
+                @include box(3rem, 3rem);
+            }
+        }
+    }
+
+    &-content {
+        @include position(absolute, 6rem, 0, 10rem, 0);
+        display: block;
+        overflow: hidden;
+    }
+
+    &-wrap {
+        @include position(absolute, 0, null, 0, 0);
+        display: flex;
+        overflow: hidden;
+        transition: visibility 0.5s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.5s cubic-bezier(0.86, 0, 0.07, 1), transform 0.5s cubic-bezier(0.86, 0, 0.07, 1), box-shadow 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+        transform: translateX(0);
+
+        &.page-1 {
+            transform: translateX(max(-100vw, -415px));
+        }
+    }
+
+    &-page {
+        @include box(100vw, 100%);
+        max-width: 41.5rem;
+        min-width: 32rem;
+        flex: 0 0 auto;
+        padding: 0 2.5rem;
+        overflow: auto;
+
+
+    }
+
+    &-list {
+        @include flex(null, null, column, null);
+    }
+
+    &-item {
+        @include text(1.7rem, 600, $white, 1.23);
+        @include flex(null, center, null, null);
+        position: relative;
+        padding: 1.5rem 3rem 1.5rem 0;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+
+        &.parent {
+            @include text(2.4rem, 600, #73BE2F, null);
+            letter-spacing: 0.065em;
+        }
+
+        &-icon-left {
+            display: inline-flex;
+            @include box(4rem, 3.2rem);
+            @include text(3.2rem, null, #526581, 1);
+            margin-right: 1rem;
+            object-fit: contain;
+            object-position: left center;
+        }
+
+        &-icon-right {
+            @include flex(center, center, null, null);
+            @include position(absolute, 0, 0, null, null);
+            height: 100%;
+            opacity: 0.4;
+        }
+    }
+
+    &-bottom {
+        @include position(absolute, null, 0, 5rem, 0);
+        @include flex(space-between, center, null, null);
+        @include text(2.1rem, null, null, 0);
+        padding: 0 5rem;
+    }
+
+    &-count {
+        @include position(absolute, 1rem, 0.1rem, null, null);
+        @include text(1.2rem, bold, #00234B, 1.6rem);
+        height: 1.6rem;
+        min-width: 1.6rem;
+        max-width: 3rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        border-radius: 0.8rem;
+        padding: 0 0.4rem;
+        letter-spacing: 0.015em;
+        text-align: center;
+        opacity: 1;
+        z-index: 1;
+        background-color: $white;
+        white-space: nowrap;
+    }
+}

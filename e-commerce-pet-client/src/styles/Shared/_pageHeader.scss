@@ -1,0 +1,27 @@
+.page-header {
+    background: #fff;
+    @include padding(3rem, 5rem, 3.5rem, 5rem);
+
+    &__title {
+        text-align: center;
+        font-family: $font-quicksan;
+        letter-spacing: -0.02em;
+        padding: 0;
+        margin: 0 auto;
+        white-space: normal;
+        max-width: 600px;
+        display: block;
+        @include text(_, 700, $blue-main, _);
+
+        @include respond(desktop) {
+            @include text(4rem, _, _, 4.2rem);
+            margin-top: 2rem;
+        }
+
+        @include respond(tablet) {
+            @include text(3rem, _, _, 3.2rem);
+            margin-top: 3rem;
+        }
+
+    }
+}

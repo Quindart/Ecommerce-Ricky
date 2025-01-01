@@ -1,0 +1,78 @@
+@include respond(desktop) {
+    .cart {
+        &__coupon {
+            &-title {
+                @include text(2.2rem, 500, $blue-main, 1.27);
+            }
+        }
+    }
+
+}
+
+@include respond(tablet) {
+    .cart {
+        &__coupon {
+            &-title {
+                @include text(1.9rem, 500, $blue-main, 1.27);
+            }
+        }
+    }
+
+}
+
+.cart {
+    &__collaterals {
+        // border-radius: 4px;
+        // border: solid 1px $blue-main;
+        padding: 25px 35px 30px 35px;
+        width: 100%;
+    }
+
+    &__coupon {
+        padding-bottom: 25px;
+        margin-bottom: 21px;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            @include position(absolute, null, 0, 0, 0);
+            border-bottom: solid 1px $border-color-light;
+        }
+
+        &-header {
+            @include flex(space-between, center, null, null);
+        }
+
+        &-form {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s linear;
+
+            &.open {
+                max-height: 150px;
+            }
+        }
+
+        .icon {
+            transition: transform 0.3s ease;
+
+            &--active {
+                transition: transform 0.3s ease;
+                transform: rotate(-180deg);
+            }
+        }
+
+        .cart__coupon-content {
+            padding-top: 25px;
+            transition: max-height 0.3s ease;
+            width: 100%;
+            @include flex(space-between, center, null, 10px);
+
+        }
+    }
+
+    &__color {
+        @include color-header($blue-main, $white, null, $blue-main);
+    }
+}

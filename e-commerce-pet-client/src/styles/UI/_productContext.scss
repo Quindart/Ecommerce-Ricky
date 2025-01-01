@@ -1,0 +1,195 @@
+.context-product {
+    width: 100%;
+
+    @media (max-width: 768px) {
+        padding: 20px 20px 35px 20px;
+    }
+
+    @media (max-width: 440px) {
+        padding: 20px 5px 35px 5px
+    } 
+
+    &__brand {
+        display: block;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 1;
+        letter-spacing: 0.015em;
+        color: $blue-main;
+
+        &:hover {
+            color: #F63E04;
+        }
+    }
+
+    &__title {
+        font-size: 2.8rem;
+        letter-spacing: -0.015em;
+        font-weight: 700;
+        line-height: 1.15;
+        color: $blue-main;
+        margin-top: 15px;
+
+        @media (min-width: 1190px) {
+            &--page {
+                font-size: $font-size-desktop-big;
+            }
+
+            &--modal {
+                font-size: $font-size-desktop-medium;
+            }
+        }
+
+        @media (max-width: 1189px) {
+            font-size: $font-size-desktop-small;
+            letter-spacing: -0.005em;
+        }
+    }
+
+    &__sku {
+        display: block;
+        margin-top: 20px;
+        @include text(1.2rem, 600, $text-color, 1.25);
+        letter-spacing: 0.02em;
+
+        :first-child {
+            @include text(1.2rem, 400, $text-color, 1.25);
+        }
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #7F8D9D;
+        margin-top: 20px;
+        font-family: "Outfit", sans-serif;
+        transition: 0.3s ease-in;
+
+        &.hide-text {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__read-more {
+        display: inline-block;
+        margin-top: 0.5rem;
+        cursor: pointer;
+        transition: $hover-transition;
+        text-transform: capitalize;
+        text-decoration: underline;
+
+        &:hover {
+            color: #F63E04;
+        }
+    }
+
+    &__label {
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__weight {
+        display: block;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        margin-bottom: 10px;
+        color: #7F8D9D;
+    }
+
+    &__reset {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        color: $blue-main;
+        display: inline-flex;
+        cursor: pointer;
+    }
+
+    &__price {
+        font-size: 25px;
+        font-weight: 700;
+        font-family: "Quicksand", sans-serif;
+        margin-bottom: 20px;
+        margin-top: 4px;
+    }
+
+    &__bottom {
+        display: inline-block;
+
+        @media (max-width: 440px) {
+            width: 100%;
+        } 
+    }
+
+    &__stockless {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        color: #D1333C;
+        margin-bottom: 10px;
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    &__features {
+        margin-top: 25px;
+        border-radius: 4px;
+        padding: 8px 0;
+        border: dashed 1px #DCEAF6;
+        background-color: #F0F9FC;
+        display: inline-flex;
+        flex-direction: column;
+
+        &--item {
+            @include flex(null, center, null, null);
+            -moz-column-gap: 15px;
+            column-gap: 15px;
+            margin: 8px 20px;
+
+            svg {
+                color: $green-1;
+            }
+
+            span {
+                @include text(1.4rem, 400, $blue-main, 1.4);
+                display: block;
+                font-style: normal;
+                letter-spacing: 0.02em;
+            }
+        }
+    }
+
+    &__custom {
+        margin-top: 20px;
+
+        ul {
+            columns: 2;
+
+            li {
+                @include flex(null, center, null, null);
+                @include text(1.4rem, 400, $text-color, 1.5);
+                margin-bottom: 5px;
+                letter-spacing: 0.02em;
+
+                svg {
+                    padding-right: 5px;
+                    color: $green-1;
+                }
+            }
+        }
+    }
+}

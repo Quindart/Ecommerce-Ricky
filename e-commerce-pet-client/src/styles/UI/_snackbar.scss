@@ -1,0 +1,50 @@
+.snackbar {
+    position: relative;
+    @include flex(null, center, null, null);
+    width: 100%;
+    width: 400px;
+    list-style: none;
+    margin: 0;
+    padding: 25px;
+    border: solid 1px $border-color-light;
+    border-radius: 4px;
+    box-shadow: 0 4px 22px 2.4px rgba(0, 0, 0, 0.12);
+    background: $white;
+
+    &__message {
+        letter-spacing: 0.045em;
+        @include text(1.2rem, 600, #00234B, 1.8rem);
+        padding: 0 10px;
+        max-width: 200px;
+    }
+
+    &__link {
+        @include text(1.2rem, bold, $white, 1.6rem);
+        min-width: 130px;
+        border-radius: 2.5rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        border: solid 0.2rem #0052b1;
+        background-color: $blue-main;
+        align-items: center;
+        padding: 1rem 1.5rem;
+        transition: $hover-transition;
+
+        &:hover {
+            background-color: $blue-main-hover ;
+            border-color: $blue-main-hover ;
+        }
+    }
+
+    &__close {
+        @include position(absolute, 6%, 2%, null, null);
+        cursor: pointer;
+        transform: scale(1);
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+}

@@ -1,0 +1,30 @@
+version: '3.4'
+services:
+    node:
+        container_name: node_server
+        build: .
+        ports:
+            - '${PORT}:${PORT}'
+        volumes:
+            - .:/app
+
+        networks:
+            - common
+        restart: always
+        environment:
+            - PORT
+            - BASE_URL_DB
+            - CLIENT_URL
+    mongo:
+        container_name: mongo
+        image: mongo
+        restart: always
+        ports:
+            - 27017:27017
+        volumes:
+            - ./data:/data/db
+        networks:
+            - common
+
+networks:
+    common:

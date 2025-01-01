@@ -1,0 +1,27 @@
+@import './variables';
+@import './mixins';
+
+//Base
+@import './Base/index.scss';
+
+//UI Components
+@import './UI/index.scss';
+@import './Shared/index.scss';
+@import './CartPage/index.scss';
+@import "./ServicesPage/index.scss";
+@import './Home/index.scss';
+
+
+//Page
+@import './Pages/Home/index.scss';
+@import "./Pages/index.scss";
+@import './ProductDetailPage/index.scss';
+@import './AccountPage/index.scss';
+@import './CheckoutPage/index.scss';
+@import './ProductPage/index.scss';
+
+//Class
+@import './Utils/index.scss';
+
+// UI
+@import './UI/forgotPassword';

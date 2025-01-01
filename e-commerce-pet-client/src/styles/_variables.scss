@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+//spacing:
+$spacing: 4px;
+
+//font:
+$roboto-font: 'Roboto', sans-serif;
+$font-quicksan: 'Quicksand', sans-serif;
+$font-outfit: 'Outfit', sans-serif;
+
+//font-size
+$font-size-desktop-big: 4rem;
+$font-size-desktop-medium: 3.2rem;
+$font-size-desktop-small: 2.6rem;
+
+//colors:
+$blue-main: #0052b1;
+$blue-main-hover: #00234b;
+$white: #ffffff;
+$green-1: #73be2f;
+$green-1-hover-text: #f63e04;
+$green-2: #8db352;
+$dark-green: #15542e;
+$color-icon: #5b85c3;
+$black: #091727;
+$brown: #401a0e;
+$purple: #531492;
+$icon-check: '\f108';
+$font-icon: 'Themify';
+$text-color: #7F8D9D;
+
+$border-color-light: #DCEAF6;
+
+// box shadows
+$box-shadow: 0 1px 6px rgba(20, 58, 102, 0.23);
+
+
+
+//hover transition
+
+$btn-hover-transition: 
+    opacity 0.3s linear,
+    visibility 0.3s linear,
+    color 0.15s linear,
+    border-color 0.15s linear,
+    background-color 0.15s linear,
+    box-shadow 0.15s linear;
+
+$hover-transition: opacity 0.3s linear,
+    visibility 0.3s linear,
+    color 0.15s linear,
+    border-color 0.15s linear,
+    background-color 0.15s linear,
+    box-shadow 0.15s linear;
+$opacity-transition: opacity 0.3s linear, visibility 0.3s linear;
+
+
+$background-hover-transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, transform var(--e-transform-transition-duration, .4s);
+
+
+
+* {
+    font-size: 1.6rem;
+}

@@ -1,0 +1,14 @@
+.input__text {
+    width: 100%;
+
+    @include flex(null, null, column, 6px);
+
+    label {
+        @include text(1.4rem, 600, $blue-main, 1.8rem);
+    }
+
+    small {
+        @include text(1rem, 400, $green-1-hover-text, 1rem);
+    }
+
+}

@@ -1,0 +1,258 @@
+.header--decor-top {
+    width: 100%;
+    @include position(absolute, 100%, null, null, 0);
+    height: 3px;
+    background-repeat: repeat-x;
+    overflow: hidden;
+
+}
+
+@include respond(desktop) {
+    .header__top-row {
+        @include grid(1fr auto 1fr, null, 3rem);
+        color: $blue-main;
+        background-color: $white;
+        padding: 0.2rem 5rem 0 5rem;
+        position: relative;
+        z-index: 99;
+
+        &--flex {
+            @include flex(space-between, center, null, null);
+        }
+
+        &--decor:before,
+        &--decor:after {
+            @include position(absolute, 100%, null, null, 0);
+            content: '';
+            display: block;
+            @include box(100%, 0.3rem);
+            background-image: var(--top-decor);
+            background-repeat: repeat-x;
+        }
+
+        &--decor:before {
+            top: unset;
+            bottom: 100%;
+            transform: scale(-1, -1);
+            background-image: var(--top-decor-2);
+            height: 4px;
+        }
+    }
+
+
+
+    .header__top-row-list {
+        list-style: none;
+        @include flex(null, center, null, null);
+        flex-wrap: wrap;
+        margin: 0 -1.5rem;
+        padding: 1.5rem 0 1.5rem 0;
+    }
+
+    .header__top-row-col-right .header__top-row-list {
+        justify-content: flex-end;
+    }
+
+    .header__top-row-item {
+        display: inline-flex;
+        align-items: center;
+        margin: 0 1.5rem;
+        position: relative;
+
+        a {
+            @include text(1.3rem, 600, #00234B, 1.23);
+            letter-spacing: 0.015em;
+
+            &:hover {
+                color: $green-1-hover-text;
+            }
+        }
+    }
+
+    .header__top-row-icon {
+        display: inline-flex;
+        @include text(1.4rem, null, $blue-main, 1);
+        margin-right: 0.9rem;
+        position: relative;
+    }
+
+    .lang-demo {
+        position: relative;
+    }
+
+    .top-bar-menu__list {
+        padding: 0;
+        margin: 0 -1.5rem;
+        list-style: none;
+        display: flex;
+        width: 100%;
+    }
+
+    .lang-demo__link {
+        text-transform: unset;
+        @include text(1.3rem, 600, #00234B, 1.23);
+        position: relative;
+        margin: 0;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+
+        &:hover {
+            color: $green-1-hover-text;
+            background: transparent;
+        }
+    }
+
+    .lang-demo:hover>.lang-demo__list {
+        transition: visibility 0.15s linear, opacity 0.15s linear;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .lang-demo__list {
+        @include position(absolute, null, -0.5rem, null, unset);
+        @include flex(null, flex-start, column, null);
+        @include text(null, normal, $blue-main, null);
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 2.4rem 0;
+        width: 25rem;
+        margin: 1rem 0 0 0;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: none;
+        text-transform: none;
+        background-color: $white;
+        box-shadow: 0 1px 6px rgba(20, 58, 102, 0.23);
+        border-radius: 0.8rem;
+        -webkit-box-align: start;
+        text-align: left;
+
+        a {
+            display: block;
+            padding: 1rem 2.5rem;
+
+            &:hover {
+                color: $green-1-hover-text;
+            }
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            @include position(absolute, -1rem, -1rem, null, -1rem);
+            height: 1rem;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            @include position(absolute, -0.9rem, 1.5rem, null, null);
+            border: solid 0.5rem transparent;
+            border-bottom-color: $white
+        }
+    }
+
+    .top-bar-menu__item {
+        position: relative;
+        flex: 0 0 auto;
+        margin: 0 1.5rem;
+
+        a {
+            @include text(1.2rem, 600, #00234b, 1.8rem);
+            letter-spacing: 0.045em;
+            text-transform: uppercase;
+
+            &:hover {
+                color: $green-1-hover-text;
+            }
+        }
+    }
+
+    .top-bar-menu__item--icon {
+        display: inline-flex;
+        vertical-align: middle;
+        @include text(1.6rem, null, #00234b, 1);
+        @include position(relative, -0.2rem, null, null, null);
+        margin-left: 0.4rem;
+    }
+
+    .top-bar-menu__submenu {
+        @include position(absolute, null, null, null, 0);
+        @include flex(null, flex-start, column, null);
+        @include text(null, normal, $blue-main, null);
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 2.3rem 0;
+        width: 25rem;
+        margin: 1rem 0 0 0;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: none;
+        text-transform: none;
+        background-color: $white;
+        box-shadow: 0 1px 6px rgba(20, 58, 102, 0.23);
+        border-radius: 0.8rem;
+
+        &.submenu_level-3 {
+            left: 100%;
+            top: -2.3rem;
+            margin-top: 0;
+        }
+
+        &:not(.top-bar-menu__submenu--inner):before {
+            content: '';
+            display: block;
+            @include position(absolute, -1rem, -1rem, null, -1rem);
+            height: 1rem;
+        }
+
+        &:not(.top-bar-menu__submenu--inner):after {
+            content: '';
+            display: block;
+            @include position(absolute, -0.9rem, null, null, 1rem);
+            border: solid 0.5rem transparent;
+            border-bottom-color: $white;
+        }
+
+        .top-bar-menu__subitem {
+            width: 100%;
+            position: relative;
+
+            a {
+                @include text(1.3rem, 600, $blue-main, 1.6rem);
+                letter-spacing: 0.045em;
+                text-transform: uppercase;
+                display: block;
+                padding: 1rem 3rem;
+
+                &:hover {
+                    color: $green-1-hover-text;
+                }
+            }
+
+        }
+
+        .top-bar-menu__subitem--icon-has-children {
+            transform: rotate(-90deg);
+            @include position(absolute, 0.9rem, 3rem, null, null);
+            @include text(1.6rem, null, $blue-main, 1);
+            display: inline-block;
+        }
+    }
+
+    .top-bar-menu__item:hover>.top-bar-menu__submenu,
+    .top-bar-menu__subitem:hover>.top-bar-menu__submenu {
+        transition: visibility 0.15s linear, opacity 0.15s linear;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@include respond(tablet) {
+    .header__top-row {
+        display: none;
+    }
+}
