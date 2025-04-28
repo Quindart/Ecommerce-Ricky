@@ -6,6 +6,18 @@
 ![image](https://github.com/user-attachments/assets/e397049b-1514-4148-9b62-95681d172404)
 ![image](https://github.com/user-attachments/assets/bf85e3b8-dc31-4e10-a2b9-75c0dde2289a)
 
+![image](https://github.com/user-attachments/assets/4a4de4f3-beb8-4636-9c62-a2678c196a3d)
+
+![image](https://github.com/user-attachments/assets/4dd43daf-a778-4f72-90f4-82307dd648cb)
+
+![image](https://github.com/user-attachments/assets/e4f8aace-6062-4549-9286-331e6cc77a4c)
+
+![image](https://github.com/user-attachments/assets/24cdde42-a521-428f-a21e-9ff1cd9bf680)
+
+
+![image](https://github.com/user-attachments/assets/cd45c927-352a-417d-9fb3-a13f1c229f96)
+
+![image](https://github.com/user-attachments/assets/dcee125a-0d01-4268-b26f-6622e0ef74e7)
 
 The Pet Food E-Commerce Platform is an online store dedicated to providing food and accessories for pets. With a user-friendly interface and modern features, the platform offers a seamless, secure, and optimized shopping experience for pet lovers.
 
@@ -154,17 +166,5 @@ We welcome contributions! Please follow these steps:
 
 ## License
 
-![image](https://github.com/user-attachments/assets/4a4de4f3-beb8-4636-9c62-a2678c196a3d)
-
-![image](https://github.com/user-attachments/assets/4dd43daf-a778-4f72-90f4-82307dd648cb)
-
-![image](https://github.com/user-attachments/assets/e4f8aace-6062-4549-9286-331e6cc77a4c)
-
-![image](https://github.com/user-attachments/assets/24cdde42-a521-428f-a21e-9ff1cd9bf680)
-
-
-![image](https://github.com/user-attachments/assets/cd45c927-352a-417d-9fb3-a13f1c229f96)
-
-![image](https://github.com/user-attachments/assets/dcee125a-0d01-4268-b26f-6622e0ef74e7)
 
 This project is licensed under the [MIT License](LICENSE).
