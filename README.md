@@ -5,6 +5,9 @@
 
 The Pet Food E-Commerce Platform is an online store dedicated to providing food and accessories for pets. With a user-friendly interface and modern features, the platform offers a seamless, secure, and optimized shopping experience for pet lovers.
 
+![image](https://github.com/user-attachments/assets/db349ef4-cbb9-4d87-b939-96de4bb42888)
+
+
 ![image](https://github.com/user-attachments/assets/e397049b-1514-4148-9b62-95681d172404)
 ![image](https://github.com/user-attachments/assets/bf85e3b8-dc31-4e10-a2b9-75c0dde2289a)
 ![image](https://github.com/user-attachments/assets/cd45c927-352a-417d-9fb3-a13f1c229f96)
